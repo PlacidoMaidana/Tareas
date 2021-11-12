@@ -19,7 +19,7 @@ namespace Entrenador.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,6 +63,56 @@ namespace Entrenador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1486348809_music_square_stop_play_pause_blue_80470 {
+            get {
+                object obj = ResourceManager.GetObject("1486348809-music-square-stop-play-pause-blue_80470", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486348813_music_forward_front_next_arrow_blue_80474 {
+            get {
+                object obj = ResourceManager.GetObject("1486348813-music-forward-front-next-arrow-blue_80474", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486348818_forward_arrows_arrow_front_go_blue_80478 {
+            get {
+                object obj = ResourceManager.GetObject("1486348818-forward-arrows-arrow-front-go-blue_80478", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486348820_music_pause_stop_control_play_blue_80477 {
+            get {
+                object obj = ResourceManager.GetObject("1486348820-music-pause-stop-control-play-blue_80477", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486348822_music_play_pause_control_go_arrow_blue_80476 {
+            get {
+                object obj = ResourceManager.GetObject("1486348822-music-play-pause-control-go-arrow-blue_80476", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1rightarrow {
             get {
                 object obj = ResourceManager.GetObject("1rightarrow", resourceCulture);
@@ -76,6 +126,26 @@ namespace Entrenador.Properties {
         internal static System.Drawing.Bitmap Add_Symbol {
             get {
                 object obj = ResourceManager.GetObject("Add-Symbol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_down_bold_box_outline_icon_139963 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_down_bold_box_outline_icon_139963", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_up_bold_box_outline_icon_139943 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_up_bold_box_outline_icon_139943", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +206,16 @@ namespace Entrenador.Properties {
         internal static System.Drawing.Bitmap Image_283 {
             get {
                 object obj = ResourceManager.GetObject("Image 283", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list_992 {
+            get {
+                object obj = ResourceManager.GetObject("list_992", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +296,16 @@ namespace Entrenador.Properties {
         internal static System.Drawing.Bitmap Shleves {
             get {
                 object obj = ResourceManager.GetObject("Shleves", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sum_icon_151075 {
+            get {
+                object obj = ResourceManager.GetObject("sum_icon_151075", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

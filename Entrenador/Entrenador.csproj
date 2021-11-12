@@ -138,6 +138,15 @@
     <None Include="Resources\Calculator-Operations.PNG" />
     <None Include="Resources\pato_flow3.jpg" />
     <None Include="Resources\Image 283.jpg" />
+    <None Include="Resources\1486348822-music-play-pause-control-go-arrow-blue_80476.png" />
+    <None Include="Resources\1486348820-music-pause-stop-control-play-blue_80477.png" />
+    <None Include="Resources\1486348813-music-forward-front-next-arrow-blue_80474.png" />
+    <None Include="Resources\1486348818-forward-arrows-arrow-front-go-blue_80478.png" />
+    <None Include="Resources\1486348809-music-square-stop-play-pause-blue_80470.png" />
+    <None Include="Resources\arrow_up_bold_box_outline_icon_139943.png" />
+    <None Include="Resources\arrow_down_bold_box_outline_icon_139963.png" />
+    <None Include="Resources\sum_icon_151075.png" />
+    <None Include="Resources\list_992.png" />
     <Content Include="stopwatch.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

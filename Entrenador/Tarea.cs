@@ -13,5 +13,7 @@ namespace Entrenador
         public string id { get; set; }
         public string imagen { get; set; }
         public string audio { get; set; }
+        public string tipo { get; set; }
+        public string unidad { get; set; }
     }
 }

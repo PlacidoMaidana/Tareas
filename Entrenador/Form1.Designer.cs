@@ -52,6 +52,12 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.sobre60 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.labRutina = new System.Windows.Forms.Label();
+            this.textDisponible = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.butRecalcular = new System.Windows.Forms.Button();
+            this.butArriba = new System.Windows.Forms.Button();
+            this.butBajar = new System.Windows.Forms.Button();
             this.butLimpiar = new System.Windows.Forms.Button();
             this.butLeer = new System.Windows.Forms.Button();
             this.butDesde = new System.Windows.Forms.Button();
@@ -64,7 +70,6 @@
             this.butQquitar = new System.Windows.Forms.Button();
             this.butCorrer = new System.Windows.Forms.Button();
             this.butNuevo = new System.Windows.Forms.Button();
-            this.labRutina = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
@@ -85,19 +90,23 @@
             this.Audio});
             this.dataGridView1.Location = new System.Drawing.Point(12, 101);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(356, 425);
             this.dataGridView1.TabIndex = 0;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.Width = 200;
             // 
             // Tiempo
             // 
             this.Tiempo.HeaderText = "Tiempo";
+            this.Tiempo.MinimumWidth = 6;
             this.Tiempo.Name = "Tiempo";
+            this.Tiempo.Width = 125;
             // 
             // Ord
             // 
@@ -112,17 +121,21 @@
             // Imagen
             // 
             this.Imagen.HeaderText = "Imagen";
+            this.Imagen.MinimumWidth = 6;
             this.Imagen.Name = "Imagen";
+            this.Imagen.Width = 125;
             // 
             // Audio
             // 
             this.Audio.HeaderText = "Audio";
+            this.Audio.MinimumWidth = 6;
             this.Audio.Name = "Audio";
+            this.Audio.Width = 125;
             // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(585, 406);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(621, 376);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(133, 44);
@@ -142,7 +155,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(529, 318);
+            this.label2.Location = new System.Drawing.Point(523, 297);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 12;
@@ -151,7 +164,7 @@
             // labTotal
             // 
             this.labTotal.AutoSize = true;
-            this.labTotal.Location = new System.Drawing.Point(603, 318);
+            this.labTotal.Location = new System.Drawing.Point(598, 297);
             this.labTotal.Name = "labTotal";
             this.labTotal.Size = new System.Drawing.Size(39, 13);
             this.labTotal.TabIndex = 13;
@@ -195,7 +208,7 @@
             // 
             this.labelCorriendo.AutoSize = true;
             this.labelCorriendo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorriendo.Location = new System.Drawing.Point(404, 437);
+            this.labelCorriendo.Location = new System.Drawing.Point(462, 418);
             this.labelCorriendo.Name = "labelCorriendo";
             this.labelCorriendo.Size = new System.Drawing.Size(57, 20);
             this.labelCorriendo.TabIndex = 21;
@@ -214,7 +227,7 @@
             // 
             this.labelTarea.AutoSize = true;
             this.labelTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTarea.Location = new System.Drawing.Point(404, 406);
+            this.labelTarea.Location = new System.Drawing.Point(462, 388);
             this.labelTarea.Name = "labelTarea";
             this.labelTarea.Size = new System.Drawing.Size(57, 20);
             this.labelTarea.TabIndex = 23;
@@ -227,7 +240,7 @@
             // sobre60
             // 
             this.sobre60.AutoSize = true;
-            this.sobre60.Location = new System.Drawing.Point(603, 339);
+            this.sobre60.Location = new System.Drawing.Point(598, 318);
             this.sobre60.Name = "sobre60";
             this.sobre60.Size = new System.Drawing.Size(39, 13);
             this.sobre60.TabIndex = 28;
@@ -236,11 +249,80 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(529, 339);
+            this.label3.Location = new System.Drawing.Point(523, 318);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 27;
             this.label3.Text = "Total/60:";
+            // 
+            // labRutina
+            // 
+            this.labRutina.AutoSize = true;
+            this.labRutina.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labRutina.Location = new System.Drawing.Point(22, 18);
+            this.labRutina.Name = "labRutina";
+            this.labRutina.Size = new System.Drawing.Size(40, 23);
+            this.labRutina.TabIndex = 29;
+            this.labRutina.Text = "*****";
+            // 
+            // textDisponible
+            // 
+            this.textDisponible.Location = new System.Drawing.Point(557, 221);
+            this.textDisponible.Name = "textDisponible";
+            this.textDisponible.Size = new System.Drawing.Size(88, 20);
+            this.textDisponible.TabIndex = 32;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(463, 228);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Tiempo disponible:";
+            // 
+            // butRecalcular
+            // 
+            this.butRecalcular.FlatAppearance.BorderSize = 0;
+            this.butRecalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butRecalcular.Image = global::Entrenador.Properties.Resources.list_992;
+            this.butRecalcular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butRecalcular.Location = new System.Drawing.Point(466, 244);
+            this.butRecalcular.Name = "butRecalcular";
+            this.butRecalcular.Size = new System.Drawing.Size(97, 43);
+            this.butRecalcular.TabIndex = 34;
+            this.butRecalcular.Text = "Recalcular";
+            this.butRecalcular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butRecalcular.UseVisualStyleBackColor = true;
+            this.butRecalcular.Click += new System.EventHandler(this.butRecalcular_Click);
+            // 
+            // butArriba
+            // 
+            this.butArriba.FlatAppearance.BorderSize = 0;
+            this.butArriba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butArriba.Image = global::Entrenador.Properties.Resources.arrow_up_bold_box_outline_icon_139943;
+            this.butArriba.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butArriba.Location = new System.Drawing.Point(387, 253);
+            this.butArriba.Name = "butArriba";
+            this.butArriba.Size = new System.Drawing.Size(50, 33);
+            this.butArriba.TabIndex = 31;
+            this.butArriba.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butArriba.UseVisualStyleBackColor = true;
+            this.butArriba.Click += new System.EventHandler(this.butArriba_Click);
+            // 
+            // butBajar
+            // 
+            this.butBajar.FlatAppearance.BorderSize = 0;
+            this.butBajar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butBajar.Image = global::Entrenador.Properties.Resources.arrow_down_bold_box_outline_icon_139963;
+            this.butBajar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butBajar.Location = new System.Drawing.Point(387, 279);
+            this.butBajar.Name = "butBajar";
+            this.butBajar.Size = new System.Drawing.Size(50, 33);
+            this.butBajar.TabIndex = 30;
+            this.butBajar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butBajar.UseVisualStyleBackColor = true;
+            this.butBajar.Click += new System.EventHandler(this.butBajar_Click);
             // 
             // butLimpiar
             // 
@@ -270,13 +352,14 @@
             // 
             // butDesde
             // 
-            this.butDesde.Image = global::Entrenador.Properties.Resources.Player_Ff;
+            this.butDesde.FlatAppearance.BorderSize = 0;
+            this.butDesde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butDesde.Image = global::Entrenador.Properties.Resources._1486348818_forward_arrows_arrow_front_go_blue_80478;
             this.butDesde.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDesde.Location = new System.Drawing.Point(407, 206);
+            this.butDesde.Location = new System.Drawing.Point(574, 173);
             this.butDesde.Name = "butDesde";
-            this.butDesde.Size = new System.Drawing.Size(116, 54);
+            this.butDesde.Size = new System.Drawing.Size(31, 37);
             this.butDesde.TabIndex = 22;
-            this.butDesde.Text = "Desde";
             this.butDesde.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butDesde.UseVisualStyleBackColor = true;
             this.butDesde.Click += new System.EventHandler(this.butDesde_Click);
@@ -287,63 +370,66 @@
             this.butDuplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butDuplicar.Image = global::Entrenador.Properties.Resources.Blueprint2;
             this.butDuplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDuplicar.Location = new System.Drawing.Point(407, 101);
+            this.butDuplicar.Location = new System.Drawing.Point(379, 198);
             this.butDuplicar.Name = "butDuplicar";
-            this.butDuplicar.Size = new System.Drawing.Size(116, 54);
+            this.butDuplicar.Size = new System.Drawing.Size(58, 43);
             this.butDuplicar.TabIndex = 20;
-            this.butDuplicar.Text = "Duplicar";
             this.butDuplicar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butDuplicar.UseVisualStyleBackColor = true;
             this.butDuplicar.Click += new System.EventHandler(this.butDuplicar_Click);
             // 
             // butReanudar
             // 
-            this.butReanudar.Image = global::Entrenador.Properties.Resources.Player_Play;
+            this.butReanudar.FlatAppearance.BorderSize = 0;
+            this.butReanudar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butReanudar.Image = global::Entrenador.Properties.Resources._1486348813_music_forward_front_next_arrow_blue_80474;
             this.butReanudar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butReanudar.Location = new System.Drawing.Point(529, 255);
+            this.butReanudar.Location = new System.Drawing.Point(535, 173);
             this.butReanudar.Name = "butReanudar";
-            this.butReanudar.Size = new System.Drawing.Size(116, 54);
+            this.butReanudar.Size = new System.Drawing.Size(31, 37);
             this.butReanudar.TabIndex = 19;
-            this.butReanudar.Text = "Reanudar";
             this.butReanudar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butReanudar.UseVisualStyleBackColor = true;
             this.butReanudar.Click += new System.EventHandler(this.butReanudar_Click);
             // 
             // butPausar
             // 
-            this.butPausar.Image = global::Entrenador.Properties.Resources.Player_Pause;
+            this.butPausar.FlatAppearance.BorderSize = 0;
+            this.butPausar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butPausar.Image = global::Entrenador.Properties.Resources._1486348820_music_pause_stop_control_play_blue_80477;
             this.butPausar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butPausar.Location = new System.Drawing.Point(407, 255);
+            this.butPausar.Location = new System.Drawing.Point(495, 173);
             this.butPausar.Name = "butPausar";
-            this.butPausar.Size = new System.Drawing.Size(116, 54);
+            this.butPausar.Size = new System.Drawing.Size(31, 37);
             this.butPausar.TabIndex = 18;
-            this.butPausar.Text = "Pausa";
             this.butPausar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butPausar.UseVisualStyleBackColor = true;
             this.butPausar.Click += new System.EventHandler(this.butPausar_Click);
             // 
             // butParar
             // 
-            this.butParar.Image = global::Entrenador.Properties.Resources.Player_Stop;
+            this.butParar.FlatAppearance.BorderSize = 0;
+            this.butParar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butParar.Image = global::Entrenador.Properties.Resources._1486348809_music_square_stop_play_pause_blue_80470;
             this.butParar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butParar.Location = new System.Drawing.Point(529, 206);
+            this.butParar.Location = new System.Drawing.Point(614, 173);
             this.butParar.Name = "butParar";
-            this.butParar.Size = new System.Drawing.Size(116, 54);
+            this.butParar.Size = new System.Drawing.Size(31, 37);
             this.butParar.TabIndex = 15;
-            this.butParar.Text = "Parar";
             this.butParar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butParar.UseVisualStyleBackColor = true;
             this.butParar.Click += new System.EventHandler(this.butParar_Click);
             // 
             // butTotal
             // 
-            this.butTotal.Image = global::Entrenador.Properties.Resources.Calculator_Operations;
+            this.butTotal.FlatAppearance.BorderSize = 0;
+            this.butTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butTotal.Image = global::Entrenador.Properties.Resources.sum_icon_151075;
             this.butTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butTotal.Location = new System.Drawing.Point(407, 307);
+            this.butTotal.Location = new System.Drawing.Point(467, 291);
             this.butTotal.Name = "butTotal";
-            this.butTotal.Size = new System.Drawing.Size(116, 54);
+            this.butTotal.Size = new System.Drawing.Size(58, 43);
             this.butTotal.TabIndex = 11;
-            this.butTotal.Text = "Total";
             this.butTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butTotal.UseVisualStyleBackColor = true;
             this.butTotal.Click += new System.EventHandler(this.butTotal_Click);
@@ -368,24 +454,24 @@
             this.butQquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butQquitar.Image = global::Entrenador.Properties.Resources.Orb_Minus;
             this.butQquitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butQquitar.Location = new System.Drawing.Point(407, 48);
+            this.butQquitar.Location = new System.Drawing.Point(379, 150);
             this.butQquitar.Name = "butQquitar";
-            this.butQquitar.Size = new System.Drawing.Size(116, 54);
+            this.butQquitar.Size = new System.Drawing.Size(58, 43);
             this.butQquitar.TabIndex = 3;
-            this.butQquitar.Text = "Quitar";
             this.butQquitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butQquitar.UseVisualStyleBackColor = false;
             this.butQquitar.Click += new System.EventHandler(this.butQquitar_Click);
             // 
             // butCorrer
             // 
-            this.butCorrer.Image = global::Entrenador.Properties.Resources.Player_Play;
+            this.butCorrer.FlatAppearance.BorderSize = 0;
+            this.butCorrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butCorrer.Image = global::Entrenador.Properties.Resources._1486348822_music_play_pause_control_go_arrow_blue_80476;
             this.butCorrer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCorrer.Location = new System.Drawing.Point(407, 153);
+            this.butCorrer.Location = new System.Drawing.Point(455, 173);
             this.butCorrer.Name = "butCorrer";
-            this.butCorrer.Size = new System.Drawing.Size(116, 54);
+            this.butCorrer.Size = new System.Drawing.Size(31, 37);
             this.butCorrer.TabIndex = 2;
-            this.butCorrer.Text = "Correr";
             this.butCorrer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butCorrer.UseVisualStyleBackColor = true;
             this.butCorrer.Click += new System.EventHandler(this.butCorrer_Click);
@@ -398,24 +484,13 @@
             this.butNuevo.ForeColor = System.Drawing.Color.Black;
             this.butNuevo.Image = global::Entrenador.Properties.Resources.Orb_Plus;
             this.butNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butNuevo.Location = new System.Drawing.Point(407, -1);
+            this.butNuevo.Location = new System.Drawing.Point(379, 101);
             this.butNuevo.Name = "butNuevo";
-            this.butNuevo.Size = new System.Drawing.Size(116, 54);
+            this.butNuevo.Size = new System.Drawing.Size(58, 43);
             this.butNuevo.TabIndex = 1;
-            this.butNuevo.Text = "Nuevo";
             this.butNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butNuevo.UseVisualStyleBackColor = true;
             this.butNuevo.Click += new System.EventHandler(this.butNuevo_Click);
-            // 
-            // labRutina
-            // 
-            this.labRutina.AutoSize = true;
-            this.labRutina.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labRutina.Location = new System.Drawing.Point(22, 18);
-            this.labRutina.Name = "labRutina";
-            this.labRutina.Size = new System.Drawing.Size(40, 23);
-            this.labRutina.TabIndex = 29;
-            this.labRutina.Text = "*****";
             // 
             // Form1
             // 
@@ -423,6 +498,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(669, 553);
+            this.Controls.Add(this.butRecalcular);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textDisponible);
+            this.Controls.Add(this.butArriba);
+            this.Controls.Add(this.butBajar);
             this.Controls.Add(this.labRutina);
             this.Controls.Add(this.sobre60);
             this.Controls.Add(this.label3);
@@ -495,6 +575,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Imagen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Audio;
         private System.Windows.Forms.Label labRutina;
+        private System.Windows.Forms.Button butBajar;
+        private System.Windows.Forms.Button butArriba;
+        private System.Windows.Forms.TextBox textDisponible;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button butRecalcular;
     }
 }
 

@@ -108,11 +108,12 @@ namespace Entrenador
         private void butTotal_Click(object sender, EventArgs e)
         {
             int total = 0;
-            for (int fila = 0; fila < dataGridView1.Rows.Count - 1; fila++)
-            {
-                 total+= int.Parse(dataGridView1.Rows[fila].Cells[1].Value.ToString());
-               
 
+
+            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+            {
+                //total += int.Parse(dataGridView1.Rows[fila].Cells["Tiempo"].Value.ToString());
+                total += int.Parse(item.Cells["Tiempo"].Value.ToString());
             }
             labTotal.Text = total.ToString();
             sobre60.Text = ((float)total / 60).ToString();
@@ -250,6 +251,87 @@ namespace Entrenador
         private void butLimpiar_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+        }
+
+        private void butBajar_Click(object sender, EventArgs e)
+        {
+            
+            DataGridView dgv = dataGridView1;
+            try
+            {
+                int totalRows = dgv.Rows.Count;
+                // get index of the row for the selected cell
+                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+                if (rowIndex == totalRows - 1)
+                    return;
+                // get index of the column for the selected cell
+                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
+                dgv.Rows.Remove(selectedRow);
+                dgv.Rows.Insert(rowIndex + 1, selectedRow);
+                dgv.ClearSelection();
+                dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
+            }
+            catch { }
+           
+
+        }
+
+        private void butArriba_Click(object sender, EventArgs e)
+        {
+           
+            DataGridView dgv = dataGridView1;
+            try
+            {
+                int totalRows = dgv.Rows.Count;
+                // get index of the row for the selected cell
+                int rowIndex = dgv.SelectedCells[0].OwningRow.Index;
+                if (rowIndex == 0)
+                    return;
+                // get index of the column for the selected cell
+                int colIndex = dgv.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRow selectedRow = dgv.Rows[rowIndex];
+                dgv.Rows.Remove(selectedRow);
+                dgv.Rows.Insert(rowIndex - 1, selectedRow);
+                dgv.ClearSelection();
+                dgv.Rows[rowIndex - 1].Cells[colIndex].Selected = true;
+            }
+            catch { }
+           
+        }
+
+        private void butRecalcular_Click(object sender, EventArgs e)
+        {
+            int tiempo_promedio = 0;
+            try
+            {
+                if (textDisponible.Text != "")
+                {
+                    int tiempo = int.Parse(textDisponible.Text);
+                    tiempo_promedio = (tiempo / (dataGridView1.RowCount - 1));
+                }
+                else
+                {
+                   
+                }
+
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.IsNewRow)
+                    { break;
+
+                    }
+                    row.Cells["Tiempo"].Value = tiempo_promedio.ToString();
+
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Verifique el formato de las fechas");
+            }
+
         }
 
         private void butCorrer_Click(object sender, EventArgs e)
