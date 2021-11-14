@@ -147,6 +147,8 @@
     <None Include="Resources\arrow_down_bold_box_outline_icon_139963.png" />
     <None Include="Resources\sum_icon_151075.png" />
     <None Include="Resources\list_992.png" />
+    <None Include="Resources\1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_81440.png" />
+    <None Include="Resources\iconfinder-check-4341282_120572.png" />
     <Content Include="stopwatch.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

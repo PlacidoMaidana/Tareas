@@ -29,15 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Imagen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Audio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.butEPLER = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,6 +65,15 @@
             this.butQquitar = new System.Windows.Forms.Button();
             this.butCorrer = new System.Windows.Forms.Button();
             this.butNuevo = new System.Windows.Forms.Button();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Imagen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Audio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Programa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
@@ -87,12 +91,405 @@
             this.Tiempo,
             this.Ord,
             this.Imagen,
-            this.Audio});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
+            this.Audio,
+            this.Tipo,
+            this.Unidad,
+            this.Programa});
+            this.dataGridView1.Location = new System.Drawing.Point(16, 124);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(356, 425);
+            this.dataGridView1.Size = new System.Drawing.Size(475, 523);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(621, 376);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(133, 44);
+            this.axWindowsMediaPlayer1.TabIndex = 8;
+            this.axWindowsMediaPlayer1.Visible = false;
+            // 
+            // butEPLER
+            // 
+            this.butEPLER.Location = new System.Drawing.Point(760, 22);
+            this.butEPLER.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butEPLER.Name = "butEPLER";
+            this.butEPLER.Size = new System.Drawing.Size(100, 28);
+            this.butEPLER.TabIndex = 9;
+            this.butEPLER.Text = "EPLER";
+            this.butEPLER.UseVisualStyleBackColor = true;
+            this.butEPLER.Click += new System.EventHandler(this.butEPLER_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(697, 366);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Tiempo total:";
+            // 
+            // labTotal
+            // 
+            this.labTotal.AutoSize = true;
+            this.labTotal.Location = new System.Drawing.Point(797, 366);
+            this.labTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labTotal.Name = "labTotal";
+            this.labTotal.Size = new System.Drawing.Size(48, 17);
+            this.labTotal.TabIndex = 13;
+            this.labTotal.Text = "********";
+            // 
+            // butRutina
+            // 
+            this.butRutina.Location = new System.Drawing.Point(760, 58);
+            this.butRutina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butRutina.Name = "butRutina";
+            this.butRutina.Size = new System.Drawing.Size(100, 28);
+            this.butRutina.TabIndex = 14;
+            this.butRutina.Text = "RUTINA";
+            this.butRutina.UseVisualStyleBackColor = true;
+            this.butRutina.Click += new System.EventHandler(this.butRutina_Click);
+            // 
+            // radioSegundos
+            // 
+            this.radioSegundos.AutoSize = true;
+            this.radioSegundos.Location = new System.Drawing.Point(752, 137);
+            this.radioSegundos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioSegundos.Name = "radioSegundos";
+            this.radioSegundos.Size = new System.Drawing.Size(93, 21);
+            this.radioSegundos.TabIndex = 16;
+            this.radioSegundos.TabStop = true;
+            this.radioSegundos.Text = "Segundos";
+            this.radioSegundos.UseVisualStyleBackColor = true;
+            this.radioSegundos.CheckedChanged += new System.EventHandler(this.radioSegundos_CheckedChanged);
+            // 
+            // radioMinutos
+            // 
+            this.radioMinutos.AutoSize = true;
+            this.radioMinutos.Location = new System.Drawing.Point(752, 170);
+            this.radioMinutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioMinutos.Name = "radioMinutos";
+            this.radioMinutos.Size = new System.Drawing.Size(78, 21);
+            this.radioMinutos.TabIndex = 17;
+            this.radioMinutos.TabStop = true;
+            this.radioMinutos.Text = "Minutos";
+            this.radioMinutos.UseVisualStyleBackColor = true;
+            this.radioMinutos.CheckedChanged += new System.EventHandler(this.radioMinutos_CheckedChanged);
+            // 
+            // labelCorriendo
+            // 
+            this.labelCorriendo.AutoSize = true;
+            this.labelCorriendo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorriendo.Location = new System.Drawing.Point(616, 514);
+            this.labelCorriendo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCorriendo.Name = "labelCorriendo";
+            this.labelCorriendo.Size = new System.Drawing.Size(76, 25);
+            this.labelCorriendo.TabIndex = 21;
+            this.labelCorriendo.Text = "********";
+            this.labelCorriendo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // labelTarea
+            // 
+            this.labelTarea.AutoSize = true;
+            this.labelTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTarea.Location = new System.Drawing.Point(616, 478);
+            this.labelTarea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTarea.Name = "labelTarea";
+            this.labelTarea.Size = new System.Drawing.Size(76, 25);
+            this.labelTarea.TabIndex = 23;
+            this.labelTarea.Text = "********";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // sobre60
+            // 
+            this.sobre60.AutoSize = true;
+            this.sobre60.Location = new System.Drawing.Point(797, 391);
+            this.sobre60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.sobre60.Name = "sobre60";
+            this.sobre60.Size = new System.Drawing.Size(48, 17);
+            this.sobre60.TabIndex = 28;
+            this.sobre60.Text = "********";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(697, 391);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Total/60:";
+            // 
+            // labRutina
+            // 
+            this.labRutina.AutoSize = true;
+            this.labRutina.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labRutina.Location = new System.Drawing.Point(29, 22);
+            this.labRutina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labRutina.Name = "labRutina";
+            this.labRutina.Size = new System.Drawing.Size(53, 29);
+            this.labRutina.TabIndex = 29;
+            this.labRutina.Text = "*****";
+            // 
+            // textDisponible
+            // 
+            this.textDisponible.Location = new System.Drawing.Point(743, 272);
+            this.textDisponible.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textDisponible.Name = "textDisponible";
+            this.textDisponible.Size = new System.Drawing.Size(116, 22);
+            this.textDisponible.TabIndex = 32;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(617, 281);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Tiempo disponible:";
+            // 
+            // butRecalcular
+            // 
+            this.butRecalcular.FlatAppearance.BorderSize = 0;
+            this.butRecalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butRecalcular.Image = global::Entrenador.Properties.Resources.list_992;
+            this.butRecalcular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butRecalcular.Location = new System.Drawing.Point(621, 300);
+            this.butRecalcular.Margin = new System.Windows.Forms.Padding(4);
+            this.butRecalcular.Name = "butRecalcular";
+            this.butRecalcular.Size = new System.Drawing.Size(129, 53);
+            this.butRecalcular.TabIndex = 34;
+            this.butRecalcular.Text = "Recalcular";
+            this.butRecalcular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butRecalcular.UseVisualStyleBackColor = true;
+            this.butRecalcular.Click += new System.EventHandler(this.butRecalcular_Click);
+            // 
+            // butArriba
+            // 
+            this.butArriba.FlatAppearance.BorderSize = 0;
+            this.butArriba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butArriba.Image = global::Entrenador.Properties.Resources.arrow_up_bold_box_outline_icon_139943;
+            this.butArriba.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butArriba.Location = new System.Drawing.Point(516, 311);
+            this.butArriba.Margin = new System.Windows.Forms.Padding(4);
+            this.butArriba.Name = "butArriba";
+            this.butArriba.Size = new System.Drawing.Size(67, 41);
+            this.butArriba.TabIndex = 31;
+            this.butArriba.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butArriba.UseVisualStyleBackColor = true;
+            this.butArriba.Click += new System.EventHandler(this.butArriba_Click);
+            // 
+            // butBajar
+            // 
+            this.butBajar.FlatAppearance.BorderSize = 0;
+            this.butBajar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butBajar.Image = global::Entrenador.Properties.Resources.arrow_down_bold_box_outline_icon_139963;
+            this.butBajar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butBajar.Location = new System.Drawing.Point(516, 343);
+            this.butBajar.Margin = new System.Windows.Forms.Padding(4);
+            this.butBajar.Name = "butBajar";
+            this.butBajar.Size = new System.Drawing.Size(67, 41);
+            this.butBajar.TabIndex = 30;
+            this.butBajar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butBajar.UseVisualStyleBackColor = true;
+            this.butBajar.Click += new System.EventHandler(this.butBajar_Click);
+            // 
+            // butLimpiar
+            // 
+            this.butLimpiar.Image = global::Entrenador.Properties.Resources.Brushes;
+            this.butLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butLimpiar.Location = new System.Drawing.Point(335, 49);
+            this.butLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.butLimpiar.Name = "butLimpiar";
+            this.butLimpiar.Size = new System.Drawing.Size(155, 66);
+            this.butLimpiar.TabIndex = 26;
+            this.butLimpiar.Text = "Limpiar";
+            this.butLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butLimpiar.UseVisualStyleBackColor = true;
+            this.butLimpiar.Click += new System.EventHandler(this.butLimpiar_Click);
+            // 
+            // butLeer
+            // 
+            this.butLeer.Image = global::Entrenador.Properties.Resources.Binoculars;
+            this.butLeer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butLeer.Location = new System.Drawing.Point(20, 49);
+            this.butLeer.Margin = new System.Windows.Forms.Padding(4);
+            this.butLeer.Name = "butLeer";
+            this.butLeer.Size = new System.Drawing.Size(155, 66);
+            this.butLeer.TabIndex = 24;
+            this.butLeer.Text = "Buscar";
+            this.butLeer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butLeer.UseVisualStyleBackColor = true;
+            this.butLeer.Click += new System.EventHandler(this.butLeer_Click);
+            // 
+            // butDesde
+            // 
+            this.butDesde.FlatAppearance.BorderSize = 0;
+            this.butDesde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butDesde.Image = global::Entrenador.Properties.Resources._1486348818_forward_arrows_arrow_front_go_blue_80478;
+            this.butDesde.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butDesde.Location = new System.Drawing.Point(765, 213);
+            this.butDesde.Margin = new System.Windows.Forms.Padding(4);
+            this.butDesde.Name = "butDesde";
+            this.butDesde.Size = new System.Drawing.Size(41, 46);
+            this.butDesde.TabIndex = 22;
+            this.butDesde.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butDesde.UseVisualStyleBackColor = true;
+            this.butDesde.Click += new System.EventHandler(this.butDesde_Click);
+            // 
+            // butDuplicar
+            // 
+            this.butDuplicar.FlatAppearance.BorderSize = 0;
+            this.butDuplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butDuplicar.Image = global::Entrenador.Properties.Resources.Blueprint2;
+            this.butDuplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butDuplicar.Location = new System.Drawing.Point(505, 244);
+            this.butDuplicar.Margin = new System.Windows.Forms.Padding(4);
+            this.butDuplicar.Name = "butDuplicar";
+            this.butDuplicar.Size = new System.Drawing.Size(77, 53);
+            this.butDuplicar.TabIndex = 20;
+            this.butDuplicar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butDuplicar.UseVisualStyleBackColor = true;
+            this.butDuplicar.Click += new System.EventHandler(this.butDuplicar_Click);
+            // 
+            // butReanudar
+            // 
+            this.butReanudar.FlatAppearance.BorderSize = 0;
+            this.butReanudar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butReanudar.Image = global::Entrenador.Properties.Resources._1486348813_music_forward_front_next_arrow_blue_80474;
+            this.butReanudar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butReanudar.Location = new System.Drawing.Point(713, 213);
+            this.butReanudar.Margin = new System.Windows.Forms.Padding(4);
+            this.butReanudar.Name = "butReanudar";
+            this.butReanudar.Size = new System.Drawing.Size(41, 46);
+            this.butReanudar.TabIndex = 19;
+            this.butReanudar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butReanudar.UseVisualStyleBackColor = true;
+            this.butReanudar.Click += new System.EventHandler(this.butReanudar_Click);
+            // 
+            // butPausar
+            // 
+            this.butPausar.FlatAppearance.BorderSize = 0;
+            this.butPausar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butPausar.Image = global::Entrenador.Properties.Resources._1486348820_music_pause_stop_control_play_blue_80477;
+            this.butPausar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butPausar.Location = new System.Drawing.Point(660, 213);
+            this.butPausar.Margin = new System.Windows.Forms.Padding(4);
+            this.butPausar.Name = "butPausar";
+            this.butPausar.Size = new System.Drawing.Size(41, 46);
+            this.butPausar.TabIndex = 18;
+            this.butPausar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butPausar.UseVisualStyleBackColor = true;
+            this.butPausar.Click += new System.EventHandler(this.butPausar_Click);
+            // 
+            // butParar
+            // 
+            this.butParar.FlatAppearance.BorderSize = 0;
+            this.butParar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butParar.Image = global::Entrenador.Properties.Resources._1486348809_music_square_stop_play_pause_blue_80470;
+            this.butParar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butParar.Location = new System.Drawing.Point(819, 213);
+            this.butParar.Margin = new System.Windows.Forms.Padding(4);
+            this.butParar.Name = "butParar";
+            this.butParar.Size = new System.Drawing.Size(41, 46);
+            this.butParar.TabIndex = 15;
+            this.butParar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butParar.UseVisualStyleBackColor = true;
+            this.butParar.Click += new System.EventHandler(this.butParar_Click);
+            // 
+            // butTotal
+            // 
+            this.butTotal.FlatAppearance.BorderSize = 0;
+            this.butTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butTotal.Image = global::Entrenador.Properties.Resources.sum_icon_151075;
+            this.butTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butTotal.Location = new System.Drawing.Point(623, 358);
+            this.butTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.butTotal.Name = "butTotal";
+            this.butTotal.Size = new System.Drawing.Size(77, 53);
+            this.butTotal.TabIndex = 11;
+            this.butTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butTotal.UseVisualStyleBackColor = true;
+            this.butTotal.Click += new System.EventHandler(this.butTotal_Click);
+            // 
+            // butGrabar
+            // 
+            this.butGrabar.Image = global::Entrenador.Properties.Resources.Shleves;
+            this.butGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butGrabar.Location = new System.Drawing.Point(177, 49);
+            this.butGrabar.Margin = new System.Windows.Forms.Padding(4);
+            this.butGrabar.Name = "butGrabar";
+            this.butGrabar.Size = new System.Drawing.Size(155, 66);
+            this.butGrabar.TabIndex = 7;
+            this.butGrabar.Text = "Guardar";
+            this.butGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butGrabar.UseVisualStyleBackColor = true;
+            this.butGrabar.Click += new System.EventHandler(this.butGrabar_Click);
+            // 
+            // butQquitar
+            // 
+            this.butQquitar.BackColor = System.Drawing.Color.Transparent;
+            this.butQquitar.FlatAppearance.BorderSize = 0;
+            this.butQquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butQquitar.Image = global::Entrenador.Properties.Resources.Orb_Minus;
+            this.butQquitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butQquitar.Location = new System.Drawing.Point(505, 185);
+            this.butQquitar.Margin = new System.Windows.Forms.Padding(4);
+            this.butQquitar.Name = "butQquitar";
+            this.butQquitar.Size = new System.Drawing.Size(77, 53);
+            this.butQquitar.TabIndex = 3;
+            this.butQquitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butQquitar.UseVisualStyleBackColor = false;
+            this.butQquitar.Click += new System.EventHandler(this.butQquitar_Click);
+            // 
+            // butCorrer
+            // 
+            this.butCorrer.FlatAppearance.BorderSize = 0;
+            this.butCorrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butCorrer.Image = global::Entrenador.Properties.Resources._1486348822_music_play_pause_control_go_arrow_blue_80476;
+            this.butCorrer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butCorrer.Location = new System.Drawing.Point(607, 213);
+            this.butCorrer.Margin = new System.Windows.Forms.Padding(4);
+            this.butCorrer.Name = "butCorrer";
+            this.butCorrer.Size = new System.Drawing.Size(41, 46);
+            this.butCorrer.TabIndex = 2;
+            this.butCorrer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butCorrer.UseVisualStyleBackColor = true;
+            this.butCorrer.Click += new System.EventHandler(this.butCorrer_Click);
+            // 
+            // butNuevo
+            // 
+            this.butNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.butNuevo.FlatAppearance.BorderSize = 0;
+            this.butNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butNuevo.ForeColor = System.Drawing.Color.Black;
+            this.butNuevo.Image = global::Entrenador.Properties.Resources.Orb_Plus;
+            this.butNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butNuevo.Location = new System.Drawing.Point(505, 124);
+            this.butNuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.butNuevo.Name = "butNuevo";
+            this.butNuevo.Size = new System.Drawing.Size(77, 53);
+            this.butNuevo.TabIndex = 1;
+            this.butNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butNuevo.UseVisualStyleBackColor = true;
+            this.butNuevo.Click += new System.EventHandler(this.butNuevo_Click);
             // 
             // Nombre
             // 
@@ -110,9 +507,9 @@
             // 
             // Ord
             // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Ord.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Ord.DefaultCellStyle = dataGridViewCellStyle3;
             this.Ord.HeaderText = "Ord";
             this.Ord.MinimumWidth = 2;
             this.Ord.Name = "Ord";
@@ -132,372 +529,37 @@
             this.Audio.Name = "Audio";
             this.Audio.Width = 125;
             // 
-            // axWindowsMediaPlayer1
+            // Tipo
             // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(621, 376);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(133, 44);
-            this.axWindowsMediaPlayer1.TabIndex = 8;
-            this.axWindowsMediaPlayer1.Visible = false;
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Width = 125;
             // 
-            // butEPLER
+            // Unidad
             // 
-            this.butEPLER.Location = new System.Drawing.Point(570, 18);
-            this.butEPLER.Name = "butEPLER";
-            this.butEPLER.Size = new System.Drawing.Size(75, 23);
-            this.butEPLER.TabIndex = 9;
-            this.butEPLER.Text = "EPLER";
-            this.butEPLER.UseVisualStyleBackColor = true;
-            this.butEPLER.Click += new System.EventHandler(this.butEPLER_Click);
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.MinimumWidth = 6;
+            this.Unidad.Name = "Unidad";
+            this.Unidad.Width = 125;
             // 
-            // label2
+            // Programa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(523, 297);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Tiempo total:";
+            this.Programa.HeaderText = "Programa";
+            this.Programa.MinimumWidth = 6;
+            this.Programa.Name = "Programa";
+            this.Programa.Width = 125;
             // 
-            // labTotal
+            // timer2
             // 
-            this.labTotal.AutoSize = true;
-            this.labTotal.Location = new System.Drawing.Point(598, 297);
-            this.labTotal.Name = "labTotal";
-            this.labTotal.Size = new System.Drawing.Size(39, 13);
-            this.labTotal.TabIndex = 13;
-            this.labTotal.Text = "********";
-            // 
-            // butRutina
-            // 
-            this.butRutina.Location = new System.Drawing.Point(570, 47);
-            this.butRutina.Name = "butRutina";
-            this.butRutina.Size = new System.Drawing.Size(75, 23);
-            this.butRutina.TabIndex = 14;
-            this.butRutina.Text = "RUTINA";
-            this.butRutina.UseVisualStyleBackColor = true;
-            this.butRutina.Click += new System.EventHandler(this.butRutina_Click);
-            // 
-            // radioSegundos
-            // 
-            this.radioSegundos.AutoSize = true;
-            this.radioSegundos.Location = new System.Drawing.Point(564, 111);
-            this.radioSegundos.Name = "radioSegundos";
-            this.radioSegundos.Size = new System.Drawing.Size(73, 17);
-            this.radioSegundos.TabIndex = 16;
-            this.radioSegundos.TabStop = true;
-            this.radioSegundos.Text = "Segundos";
-            this.radioSegundos.UseVisualStyleBackColor = true;
-            this.radioSegundos.CheckedChanged += new System.EventHandler(this.radioSegundos_CheckedChanged);
-            // 
-            // radioMinutos
-            // 
-            this.radioMinutos.AutoSize = true;
-            this.radioMinutos.Location = new System.Drawing.Point(564, 138);
-            this.radioMinutos.Name = "radioMinutos";
-            this.radioMinutos.Size = new System.Drawing.Size(62, 17);
-            this.radioMinutos.TabIndex = 17;
-            this.radioMinutos.TabStop = true;
-            this.radioMinutos.Text = "Minutos";
-            this.radioMinutos.UseVisualStyleBackColor = true;
-            this.radioMinutos.CheckedChanged += new System.EventHandler(this.radioMinutos_CheckedChanged);
-            // 
-            // labelCorriendo
-            // 
-            this.labelCorriendo.AutoSize = true;
-            this.labelCorriendo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorriendo.Location = new System.Drawing.Point(462, 418);
-            this.labelCorriendo.Name = "labelCorriendo";
-            this.labelCorriendo.Size = new System.Drawing.Size(57, 20);
-            this.labelCorriendo.TabIndex = 21;
-            this.labelCorriendo.Text = "********";
-            this.labelCorriendo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
-            // 
-            // labelTarea
-            // 
-            this.labelTarea.AutoSize = true;
-            this.labelTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTarea.Location = new System.Drawing.Point(462, 388);
-            this.labelTarea.Name = "labelTarea";
-            this.labelTarea.Size = new System.Drawing.Size(57, 20);
-            this.labelTarea.TabIndex = 23;
-            this.labelTarea.Text = "********";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // sobre60
-            // 
-            this.sobre60.AutoSize = true;
-            this.sobre60.Location = new System.Drawing.Point(598, 318);
-            this.sobre60.Name = "sobre60";
-            this.sobre60.Size = new System.Drawing.Size(39, 13);
-            this.sobre60.TabIndex = 28;
-            this.sobre60.Text = "********";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(523, 318);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Total/60:";
-            // 
-            // labRutina
-            // 
-            this.labRutina.AutoSize = true;
-            this.labRutina.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labRutina.Location = new System.Drawing.Point(22, 18);
-            this.labRutina.Name = "labRutina";
-            this.labRutina.Size = new System.Drawing.Size(40, 23);
-            this.labRutina.TabIndex = 29;
-            this.labRutina.Text = "*****";
-            // 
-            // textDisponible
-            // 
-            this.textDisponible.Location = new System.Drawing.Point(557, 221);
-            this.textDisponible.Name = "textDisponible";
-            this.textDisponible.Size = new System.Drawing.Size(88, 20);
-            this.textDisponible.TabIndex = 32;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(463, 228);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Tiempo disponible:";
-            // 
-            // butRecalcular
-            // 
-            this.butRecalcular.FlatAppearance.BorderSize = 0;
-            this.butRecalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butRecalcular.Image = global::Entrenador.Properties.Resources.list_992;
-            this.butRecalcular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butRecalcular.Location = new System.Drawing.Point(466, 244);
-            this.butRecalcular.Name = "butRecalcular";
-            this.butRecalcular.Size = new System.Drawing.Size(97, 43);
-            this.butRecalcular.TabIndex = 34;
-            this.butRecalcular.Text = "Recalcular";
-            this.butRecalcular.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butRecalcular.UseVisualStyleBackColor = true;
-            this.butRecalcular.Click += new System.EventHandler(this.butRecalcular_Click);
-            // 
-            // butArriba
-            // 
-            this.butArriba.FlatAppearance.BorderSize = 0;
-            this.butArriba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butArriba.Image = global::Entrenador.Properties.Resources.arrow_up_bold_box_outline_icon_139943;
-            this.butArriba.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butArriba.Location = new System.Drawing.Point(387, 253);
-            this.butArriba.Name = "butArriba";
-            this.butArriba.Size = new System.Drawing.Size(50, 33);
-            this.butArriba.TabIndex = 31;
-            this.butArriba.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butArriba.UseVisualStyleBackColor = true;
-            this.butArriba.Click += new System.EventHandler(this.butArriba_Click);
-            // 
-            // butBajar
-            // 
-            this.butBajar.FlatAppearance.BorderSize = 0;
-            this.butBajar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butBajar.Image = global::Entrenador.Properties.Resources.arrow_down_bold_box_outline_icon_139963;
-            this.butBajar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butBajar.Location = new System.Drawing.Point(387, 279);
-            this.butBajar.Name = "butBajar";
-            this.butBajar.Size = new System.Drawing.Size(50, 33);
-            this.butBajar.TabIndex = 30;
-            this.butBajar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butBajar.UseVisualStyleBackColor = true;
-            this.butBajar.Click += new System.EventHandler(this.butBajar_Click);
-            // 
-            // butLimpiar
-            // 
-            this.butLimpiar.Image = global::Entrenador.Properties.Resources.Brushes;
-            this.butLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butLimpiar.Location = new System.Drawing.Point(251, 40);
-            this.butLimpiar.Name = "butLimpiar";
-            this.butLimpiar.Size = new System.Drawing.Size(116, 54);
-            this.butLimpiar.TabIndex = 26;
-            this.butLimpiar.Text = "Limpiar";
-            this.butLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butLimpiar.UseVisualStyleBackColor = true;
-            this.butLimpiar.Click += new System.EventHandler(this.butLimpiar_Click);
-            // 
-            // butLeer
-            // 
-            this.butLeer.Image = global::Entrenador.Properties.Resources.Binoculars;
-            this.butLeer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butLeer.Location = new System.Drawing.Point(15, 40);
-            this.butLeer.Name = "butLeer";
-            this.butLeer.Size = new System.Drawing.Size(116, 54);
-            this.butLeer.TabIndex = 24;
-            this.butLeer.Text = "Buscar";
-            this.butLeer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butLeer.UseVisualStyleBackColor = true;
-            this.butLeer.Click += new System.EventHandler(this.butLeer_Click);
-            // 
-            // butDesde
-            // 
-            this.butDesde.FlatAppearance.BorderSize = 0;
-            this.butDesde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butDesde.Image = global::Entrenador.Properties.Resources._1486348818_forward_arrows_arrow_front_go_blue_80478;
-            this.butDesde.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDesde.Location = new System.Drawing.Point(574, 173);
-            this.butDesde.Name = "butDesde";
-            this.butDesde.Size = new System.Drawing.Size(31, 37);
-            this.butDesde.TabIndex = 22;
-            this.butDesde.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butDesde.UseVisualStyleBackColor = true;
-            this.butDesde.Click += new System.EventHandler(this.butDesde_Click);
-            // 
-            // butDuplicar
-            // 
-            this.butDuplicar.FlatAppearance.BorderSize = 0;
-            this.butDuplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butDuplicar.Image = global::Entrenador.Properties.Resources.Blueprint2;
-            this.butDuplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDuplicar.Location = new System.Drawing.Point(379, 198);
-            this.butDuplicar.Name = "butDuplicar";
-            this.butDuplicar.Size = new System.Drawing.Size(58, 43);
-            this.butDuplicar.TabIndex = 20;
-            this.butDuplicar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butDuplicar.UseVisualStyleBackColor = true;
-            this.butDuplicar.Click += new System.EventHandler(this.butDuplicar_Click);
-            // 
-            // butReanudar
-            // 
-            this.butReanudar.FlatAppearance.BorderSize = 0;
-            this.butReanudar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butReanudar.Image = global::Entrenador.Properties.Resources._1486348813_music_forward_front_next_arrow_blue_80474;
-            this.butReanudar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butReanudar.Location = new System.Drawing.Point(535, 173);
-            this.butReanudar.Name = "butReanudar";
-            this.butReanudar.Size = new System.Drawing.Size(31, 37);
-            this.butReanudar.TabIndex = 19;
-            this.butReanudar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butReanudar.UseVisualStyleBackColor = true;
-            this.butReanudar.Click += new System.EventHandler(this.butReanudar_Click);
-            // 
-            // butPausar
-            // 
-            this.butPausar.FlatAppearance.BorderSize = 0;
-            this.butPausar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butPausar.Image = global::Entrenador.Properties.Resources._1486348820_music_pause_stop_control_play_blue_80477;
-            this.butPausar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butPausar.Location = new System.Drawing.Point(495, 173);
-            this.butPausar.Name = "butPausar";
-            this.butPausar.Size = new System.Drawing.Size(31, 37);
-            this.butPausar.TabIndex = 18;
-            this.butPausar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butPausar.UseVisualStyleBackColor = true;
-            this.butPausar.Click += new System.EventHandler(this.butPausar_Click);
-            // 
-            // butParar
-            // 
-            this.butParar.FlatAppearance.BorderSize = 0;
-            this.butParar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butParar.Image = global::Entrenador.Properties.Resources._1486348809_music_square_stop_play_pause_blue_80470;
-            this.butParar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butParar.Location = new System.Drawing.Point(614, 173);
-            this.butParar.Name = "butParar";
-            this.butParar.Size = new System.Drawing.Size(31, 37);
-            this.butParar.TabIndex = 15;
-            this.butParar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butParar.UseVisualStyleBackColor = true;
-            this.butParar.Click += new System.EventHandler(this.butParar_Click);
-            // 
-            // butTotal
-            // 
-            this.butTotal.FlatAppearance.BorderSize = 0;
-            this.butTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butTotal.Image = global::Entrenador.Properties.Resources.sum_icon_151075;
-            this.butTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butTotal.Location = new System.Drawing.Point(467, 291);
-            this.butTotal.Name = "butTotal";
-            this.butTotal.Size = new System.Drawing.Size(58, 43);
-            this.butTotal.TabIndex = 11;
-            this.butTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butTotal.UseVisualStyleBackColor = true;
-            this.butTotal.Click += new System.EventHandler(this.butTotal_Click);
-            // 
-            // butGrabar
-            // 
-            this.butGrabar.Image = global::Entrenador.Properties.Resources.Shleves;
-            this.butGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butGrabar.Location = new System.Drawing.Point(133, 40);
-            this.butGrabar.Name = "butGrabar";
-            this.butGrabar.Size = new System.Drawing.Size(116, 54);
-            this.butGrabar.TabIndex = 7;
-            this.butGrabar.Text = "Guardar";
-            this.butGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butGrabar.UseVisualStyleBackColor = true;
-            this.butGrabar.Click += new System.EventHandler(this.butGrabar_Click);
-            // 
-            // butQquitar
-            // 
-            this.butQquitar.BackColor = System.Drawing.Color.Transparent;
-            this.butQquitar.FlatAppearance.BorderSize = 0;
-            this.butQquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butQquitar.Image = global::Entrenador.Properties.Resources.Orb_Minus;
-            this.butQquitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butQquitar.Location = new System.Drawing.Point(379, 150);
-            this.butQquitar.Name = "butQquitar";
-            this.butQquitar.Size = new System.Drawing.Size(58, 43);
-            this.butQquitar.TabIndex = 3;
-            this.butQquitar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butQquitar.UseVisualStyleBackColor = false;
-            this.butQquitar.Click += new System.EventHandler(this.butQquitar_Click);
-            // 
-            // butCorrer
-            // 
-            this.butCorrer.FlatAppearance.BorderSize = 0;
-            this.butCorrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butCorrer.Image = global::Entrenador.Properties.Resources._1486348822_music_play_pause_control_go_arrow_blue_80476;
-            this.butCorrer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCorrer.Location = new System.Drawing.Point(455, 173);
-            this.butCorrer.Name = "butCorrer";
-            this.butCorrer.Size = new System.Drawing.Size(31, 37);
-            this.butCorrer.TabIndex = 2;
-            this.butCorrer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butCorrer.UseVisualStyleBackColor = true;
-            this.butCorrer.Click += new System.EventHandler(this.butCorrer_Click);
-            // 
-            // butNuevo
-            // 
-            this.butNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.butNuevo.FlatAppearance.BorderSize = 0;
-            this.butNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butNuevo.ForeColor = System.Drawing.Color.Black;
-            this.butNuevo.Image = global::Entrenador.Properties.Resources.Orb_Plus;
-            this.butNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butNuevo.Location = new System.Drawing.Point(379, 101);
-            this.butNuevo.Name = "butNuevo";
-            this.butNuevo.Size = new System.Drawing.Size(58, 43);
-            this.butNuevo.TabIndex = 1;
-            this.butNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.butNuevo.UseVisualStyleBackColor = true;
-            this.butNuevo.Click += new System.EventHandler(this.butNuevo_Click);
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(669, 553);
+            this.ClientSize = new System.Drawing.Size(892, 681);
             this.Controls.Add(this.butRecalcular);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textDisponible);
@@ -529,6 +591,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Entrenador";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -569,17 +632,21 @@
         private System.Windows.Forms.Button butLimpiar;
         private System.Windows.Forms.Label sobre60;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tiempo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ord;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Imagen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Audio;
         private System.Windows.Forms.Label labRutina;
         private System.Windows.Forms.Button butBajar;
         private System.Windows.Forms.Button butArriba;
         private System.Windows.Forms.TextBox textDisponible;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butRecalcular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tiempo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Imagen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Audio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Programa;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

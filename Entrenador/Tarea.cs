@@ -15,5 +15,6 @@ namespace Entrenador
         public string audio { get; set; }
         public string tipo { get; set; }
         public string unidad { get; set; }
+        public string programa { get; set; }
     }
 }

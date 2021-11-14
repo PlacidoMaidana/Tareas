@@ -113,6 +113,17 @@ namespace Entrenador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1486505375_files_folder_search_magnifying_glass_file_search_magnifier_storage_81440 {
+            get {
+                object obj = ResourceManager.GetObject("1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_814" +
+                        "40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1rightarrow {
             get {
                 object obj = ResourceManager.GetObject("1rightarrow", resourceCulture);
@@ -196,6 +207,16 @@ namespace Entrenador.Properties {
         internal static System.Drawing.Bitmap edit_add {
             get {
                 object obj = ResourceManager.GetObject("edit_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_check_4341282_120572 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder-check-4341282_120572", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

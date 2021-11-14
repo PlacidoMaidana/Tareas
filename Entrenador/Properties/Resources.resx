@@ -118,11 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sum_icon_151075" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sum_icon_151075.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_up_bold_box_outline_icon_139943" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow_up_bold_box_outline_icon_139943.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_81440" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_81440.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1rightarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1rightarrow.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -132,6 +129,9 @@
   </data>
   <data name="1486348820-music-pause-stop-control-play-blue_80477" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1486348820-music-pause-stop-control-play-blue_80477.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player-Ff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Player-Ff.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Player-Pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Player-Pause.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,29 +154,35 @@
   <data name="Shleves" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shleves.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Binoculars" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Binoculars.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sum_icon_151075" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sum_icon_151075.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Player-Play" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Player-Play.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Orb-Minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Orb-Minus.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1486348813-music-forward-front-next-arrow-blue_80474" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1486348813-music-forward-front-next-arrow-blue_80474.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Player-Ff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player-Ff.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow_up_bold_box_outline_icon_139943" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_up_bold_box_outline_icon_139943.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pato_flow3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pato_flow3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Image 283" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Image 283.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="list_992" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list_992.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Binoculars" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Binoculars.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Calculator-Operations" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Calculator-Operations.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow_down_bold_box_outline_icon_139963" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow_down_bold_box_outline_icon_139963.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Orb-Minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Orb-Minus.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,10 +193,10 @@
   <data name="Orb-Plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Orb-Plus.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1486348813-music-forward-front-next-arrow-blue_80474" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1486348813-music-forward-front-next-arrow-blue_80474.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Image 283" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image 283.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list_992" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list_992.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconfinder-check-4341282_120572" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconfinder-check-4341282_120572.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

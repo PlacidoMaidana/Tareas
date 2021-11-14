@@ -46,6 +46,9 @@ namespace Entrenador
             t.id = textId.Text;
             t.imagen = textImagen.Text;
             t.audio = textAudio.Text;
+            t.tipo =  comboTipo.Text;
+            t.unidad = comboUnidades.Text;
+            t.programa = textPrograma.Text;
         }   
 
         private void butNuevo_Click(object sender, EventArgs e)
@@ -72,6 +75,24 @@ namespace Entrenador
             {
 
                 MessageBox.Show("Seleccione una imagen");
+            }
+        }
+
+        private void butPrograma_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "programa (*.csv)|*.csv|All files (*.*)|*.*";
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    textPrograma.Text = openFileDialog1.FileName.ToString();
+                   
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Seleccione un programa");
             }
         }
     }
