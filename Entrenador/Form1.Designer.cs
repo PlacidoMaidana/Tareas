@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -73,7 +73,6 @@
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Programa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +84,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
@@ -96,17 +96,17 @@
             this.Unidad,
             this.Programa});
             this.dataGridView1.Location = new System.Drawing.Point(16, 124);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(475, 523);
+            this.dataGridView1.Size = new System.Drawing.Size(654, 517);
             this.dataGridView1.TabIndex = 0;
             // 
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(621, 376);
-            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(794, 376);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(133, 44);
@@ -115,8 +115,8 @@
             // 
             // butEPLER
             // 
-            this.butEPLER.Location = new System.Drawing.Point(760, 22);
-            this.butEPLER.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butEPLER.Location = new System.Drawing.Point(933, 22);
+            this.butEPLER.Margin = new System.Windows.Forms.Padding(4);
             this.butEPLER.Name = "butEPLER";
             this.butEPLER.Size = new System.Drawing.Size(100, 28);
             this.butEPLER.TabIndex = 9;
@@ -127,7 +127,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(697, 366);
+            this.label2.Location = new System.Drawing.Point(870, 366);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 17);
@@ -137,7 +137,7 @@
             // labTotal
             // 
             this.labTotal.AutoSize = true;
-            this.labTotal.Location = new System.Drawing.Point(797, 366);
+            this.labTotal.Location = new System.Drawing.Point(970, 366);
             this.labTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labTotal.Name = "labTotal";
             this.labTotal.Size = new System.Drawing.Size(48, 17);
@@ -146,8 +146,8 @@
             // 
             // butRutina
             // 
-            this.butRutina.Location = new System.Drawing.Point(760, 58);
-            this.butRutina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butRutina.Location = new System.Drawing.Point(933, 58);
+            this.butRutina.Margin = new System.Windows.Forms.Padding(4);
             this.butRutina.Name = "butRutina";
             this.butRutina.Size = new System.Drawing.Size(100, 28);
             this.butRutina.TabIndex = 14;
@@ -158,8 +158,8 @@
             // radioSegundos
             // 
             this.radioSegundos.AutoSize = true;
-            this.radioSegundos.Location = new System.Drawing.Point(752, 137);
-            this.radioSegundos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioSegundos.Location = new System.Drawing.Point(925, 137);
+            this.radioSegundos.Margin = new System.Windows.Forms.Padding(4);
             this.radioSegundos.Name = "radioSegundos";
             this.radioSegundos.Size = new System.Drawing.Size(93, 21);
             this.radioSegundos.TabIndex = 16;
@@ -171,8 +171,8 @@
             // radioMinutos
             // 
             this.radioMinutos.AutoSize = true;
-            this.radioMinutos.Location = new System.Drawing.Point(752, 170);
-            this.radioMinutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioMinutos.Location = new System.Drawing.Point(925, 170);
+            this.radioMinutos.Margin = new System.Windows.Forms.Padding(4);
             this.radioMinutos.Name = "radioMinutos";
             this.radioMinutos.Size = new System.Drawing.Size(78, 21);
             this.radioMinutos.TabIndex = 17;
@@ -185,7 +185,7 @@
             // 
             this.labelCorriendo.AutoSize = true;
             this.labelCorriendo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorriendo.Location = new System.Drawing.Point(616, 514);
+            this.labelCorriendo.Location = new System.Drawing.Point(695, 523);
             this.labelCorriendo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCorriendo.Name = "labelCorriendo";
             this.labelCorriendo.Size = new System.Drawing.Size(76, 25);
@@ -205,7 +205,7 @@
             // 
             this.labelTarea.AutoSize = true;
             this.labelTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTarea.Location = new System.Drawing.Point(616, 478);
+            this.labelTarea.Location = new System.Drawing.Point(695, 487);
             this.labelTarea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTarea.Name = "labelTarea";
             this.labelTarea.Size = new System.Drawing.Size(76, 25);
@@ -219,7 +219,7 @@
             // sobre60
             // 
             this.sobre60.AutoSize = true;
-            this.sobre60.Location = new System.Drawing.Point(797, 391);
+            this.sobre60.Location = new System.Drawing.Point(970, 391);
             this.sobre60.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sobre60.Name = "sobre60";
             this.sobre60.Size = new System.Drawing.Size(48, 17);
@@ -229,7 +229,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(697, 391);
+            this.label3.Location = new System.Drawing.Point(870, 391);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
@@ -249,8 +249,8 @@
             // 
             // textDisponible
             // 
-            this.textDisponible.Location = new System.Drawing.Point(743, 272);
-            this.textDisponible.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textDisponible.Location = new System.Drawing.Point(916, 272);
+            this.textDisponible.Margin = new System.Windows.Forms.Padding(4);
             this.textDisponible.Name = "textDisponible";
             this.textDisponible.Size = new System.Drawing.Size(116, 22);
             this.textDisponible.TabIndex = 32;
@@ -258,7 +258,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(617, 281);
+            this.label1.Location = new System.Drawing.Point(790, 281);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 17);
@@ -271,7 +271,7 @@
             this.butRecalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butRecalcular.Image = global::Entrenador.Properties.Resources.list_992;
             this.butRecalcular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butRecalcular.Location = new System.Drawing.Point(621, 300);
+            this.butRecalcular.Location = new System.Drawing.Point(794, 300);
             this.butRecalcular.Margin = new System.Windows.Forms.Padding(4);
             this.butRecalcular.Name = "butRecalcular";
             this.butRecalcular.Size = new System.Drawing.Size(129, 53);
@@ -287,7 +287,7 @@
             this.butArriba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butArriba.Image = global::Entrenador.Properties.Resources.arrow_up_bold_box_outline_icon_139943;
             this.butArriba.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butArriba.Location = new System.Drawing.Point(516, 311);
+            this.butArriba.Location = new System.Drawing.Point(689, 311);
             this.butArriba.Margin = new System.Windows.Forms.Padding(4);
             this.butArriba.Name = "butArriba";
             this.butArriba.Size = new System.Drawing.Size(67, 41);
@@ -302,7 +302,7 @@
             this.butBajar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butBajar.Image = global::Entrenador.Properties.Resources.arrow_down_bold_box_outline_icon_139963;
             this.butBajar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butBajar.Location = new System.Drawing.Point(516, 343);
+            this.butBajar.Location = new System.Drawing.Point(689, 343);
             this.butBajar.Margin = new System.Windows.Forms.Padding(4);
             this.butBajar.Name = "butBajar";
             this.butBajar.Size = new System.Drawing.Size(67, 41);
@@ -345,7 +345,7 @@
             this.butDesde.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butDesde.Image = global::Entrenador.Properties.Resources._1486348818_forward_arrows_arrow_front_go_blue_80478;
             this.butDesde.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDesde.Location = new System.Drawing.Point(765, 213);
+            this.butDesde.Location = new System.Drawing.Point(938, 213);
             this.butDesde.Margin = new System.Windows.Forms.Padding(4);
             this.butDesde.Name = "butDesde";
             this.butDesde.Size = new System.Drawing.Size(41, 46);
@@ -360,7 +360,7 @@
             this.butDuplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butDuplicar.Image = global::Entrenador.Properties.Resources.Blueprint2;
             this.butDuplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDuplicar.Location = new System.Drawing.Point(505, 244);
+            this.butDuplicar.Location = new System.Drawing.Point(678, 244);
             this.butDuplicar.Margin = new System.Windows.Forms.Padding(4);
             this.butDuplicar.Name = "butDuplicar";
             this.butDuplicar.Size = new System.Drawing.Size(77, 53);
@@ -375,7 +375,7 @@
             this.butReanudar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butReanudar.Image = global::Entrenador.Properties.Resources._1486348813_music_forward_front_next_arrow_blue_80474;
             this.butReanudar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butReanudar.Location = new System.Drawing.Point(713, 213);
+            this.butReanudar.Location = new System.Drawing.Point(886, 213);
             this.butReanudar.Margin = new System.Windows.Forms.Padding(4);
             this.butReanudar.Name = "butReanudar";
             this.butReanudar.Size = new System.Drawing.Size(41, 46);
@@ -390,7 +390,7 @@
             this.butPausar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butPausar.Image = global::Entrenador.Properties.Resources._1486348820_music_pause_stop_control_play_blue_80477;
             this.butPausar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butPausar.Location = new System.Drawing.Point(660, 213);
+            this.butPausar.Location = new System.Drawing.Point(833, 213);
             this.butPausar.Margin = new System.Windows.Forms.Padding(4);
             this.butPausar.Name = "butPausar";
             this.butPausar.Size = new System.Drawing.Size(41, 46);
@@ -405,7 +405,7 @@
             this.butParar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butParar.Image = global::Entrenador.Properties.Resources._1486348809_music_square_stop_play_pause_blue_80470;
             this.butParar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butParar.Location = new System.Drawing.Point(819, 213);
+            this.butParar.Location = new System.Drawing.Point(992, 213);
             this.butParar.Margin = new System.Windows.Forms.Padding(4);
             this.butParar.Name = "butParar";
             this.butParar.Size = new System.Drawing.Size(41, 46);
@@ -420,7 +420,7 @@
             this.butTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butTotal.Image = global::Entrenador.Properties.Resources.sum_icon_151075;
             this.butTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butTotal.Location = new System.Drawing.Point(623, 358);
+            this.butTotal.Location = new System.Drawing.Point(796, 358);
             this.butTotal.Margin = new System.Windows.Forms.Padding(4);
             this.butTotal.Name = "butTotal";
             this.butTotal.Size = new System.Drawing.Size(77, 53);
@@ -450,7 +450,7 @@
             this.butQquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butQquitar.Image = global::Entrenador.Properties.Resources.Orb_Minus;
             this.butQquitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butQquitar.Location = new System.Drawing.Point(505, 185);
+            this.butQquitar.Location = new System.Drawing.Point(678, 185);
             this.butQquitar.Margin = new System.Windows.Forms.Padding(4);
             this.butQquitar.Name = "butQquitar";
             this.butQquitar.Size = new System.Drawing.Size(77, 53);
@@ -465,7 +465,7 @@
             this.butCorrer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butCorrer.Image = global::Entrenador.Properties.Resources._1486348822_music_play_pause_control_go_arrow_blue_80476;
             this.butCorrer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butCorrer.Location = new System.Drawing.Point(607, 213);
+            this.butCorrer.Location = new System.Drawing.Point(780, 213);
             this.butCorrer.Margin = new System.Windows.Forms.Padding(4);
             this.butCorrer.Name = "butCorrer";
             this.butCorrer.Size = new System.Drawing.Size(41, 46);
@@ -482,7 +482,7 @@
             this.butNuevo.ForeColor = System.Drawing.Color.Black;
             this.butNuevo.Image = global::Entrenador.Properties.Resources.Orb_Plus;
             this.butNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butNuevo.Location = new System.Drawing.Point(505, 124);
+            this.butNuevo.Location = new System.Drawing.Point(678, 124);
             this.butNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.butNuevo.Name = "butNuevo";
             this.butNuevo.Size = new System.Drawing.Size(77, 53);
@@ -503,16 +503,17 @@
             this.Tiempo.HeaderText = "Tiempo";
             this.Tiempo.MinimumWidth = 6;
             this.Tiempo.Name = "Tiempo";
-            this.Tiempo.Width = 125;
+            this.Tiempo.Width = 60;
             // 
             // Ord
             // 
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Ord.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Ord.DefaultCellStyle = dataGridViewCellStyle1;
             this.Ord.HeaderText = "Ord";
             this.Ord.MinimumWidth = 2;
             this.Ord.Name = "Ord";
+            this.Ord.Visible = false;
             this.Ord.Width = 30;
             // 
             // Imagen
@@ -550,16 +551,12 @@
             this.Programa.Name = "Programa";
             this.Programa.Width = 125;
             // 
-            // timer2
-            // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(892, 681);
+            this.ClientSize = new System.Drawing.Size(1082, 681);
             this.Controls.Add(this.butRecalcular);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textDisponible);
@@ -591,7 +588,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Entrenador";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -646,7 +643,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Programa;
-        private System.Windows.Forms.Timer timer2;
     }
 }
 

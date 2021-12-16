@@ -64,7 +64,7 @@
             // textTarea
             // 
             this.textTarea.Location = new System.Drawing.Point(161, 31);
-            this.textTarea.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textTarea.Margin = new System.Windows.Forms.Padding(4);
             this.textTarea.Name = "textTarea";
             this.textTarea.Size = new System.Drawing.Size(132, 22);
             this.textTarea.TabIndex = 0;
@@ -73,7 +73,7 @@
             // textTiempo
             // 
             this.textTiempo.Location = new System.Drawing.Point(161, 75);
-            this.textTiempo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textTiempo.Margin = new System.Windows.Forms.Padding(4);
             this.textTiempo.Name = "textTiempo";
             this.textTiempo.Size = new System.Drawing.Size(132, 22);
             this.textTiempo.TabIndex = 1;
@@ -92,7 +92,7 @@
             // textId
             // 
             this.textId.Location = new System.Drawing.Point(375, 31);
-            this.textId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textId.Margin = new System.Windows.Forms.Padding(4);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(132, 22);
             this.textId.TabIndex = 7;
@@ -111,7 +111,7 @@
             // textImagen
             // 
             this.textImagen.Location = new System.Drawing.Point(161, 219);
-            this.textImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textImagen.Margin = new System.Windows.Forms.Padding(4);
             this.textImagen.Name = "textImagen";
             this.textImagen.Size = new System.Drawing.Size(132, 22);
             this.textImagen.TabIndex = 8;
@@ -130,7 +130,7 @@
             // textAudio
             // 
             this.textAudio.Location = new System.Drawing.Point(161, 255);
-            this.textAudio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textAudio.Margin = new System.Windows.Forms.Padding(4);
             this.textAudio.Name = "textAudio";
             this.textAudio.Size = new System.Drawing.Size(132, 22);
             this.textAudio.TabIndex = 10;
@@ -188,6 +188,7 @@
             this.comboUnidades.Size = new System.Drawing.Size(121, 24);
             this.comboUnidades.TabIndex = 3;
             this.comboUnidades.Text = "Segundos";
+            this.comboUnidades.SelectedIndexChanged += new System.EventHandler(this.comboUnidades_SelectedIndexChanged);
             // 
             // textPrograma
             // 
@@ -196,7 +197,7 @@
             this.textPrograma.Name = "textPrograma";
             this.textPrograma.Size = new System.Drawing.Size(132, 22);
             this.textPrograma.TabIndex = 18;
-            this.textPrograma.Text = "programa.csv";
+            this.textPrograma.Text = "programa.mp3";
             // 
             // label7
             // 
@@ -284,7 +285,7 @@
             this.Controls.Add(this.textTarea);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butNuevo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ficha";
             this.Text = "ficha";
             this.ResumeLayout(false);

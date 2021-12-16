@@ -115,14 +115,20 @@ namespace Entrenador
         {
             int total = 0;
 
-
-            foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
-            {
+            
+                foreach (DataGridViewRow item in this.dataGridView1.SelectedRows)
+                {
                 //total += int.Parse(dataGridView1.Rows[fila].Cells["Tiempo"].Value.ToString());
-                total += int.Parse(item.Cells["Tiempo"].Value.ToString());
-            }
-            labTotal.Text = total.ToString();
-            sobre60.Text = ((float)total / 60).ToString();
+                   
+                    total += int.Parse(item.Cells["Tiempo"].Value.ToString());
+                    
+                    
+                   
+                }
+                labTotal.Text = total.ToString();
+                sobre60.Text = ((float)total / 60).ToString();
+            
+           
         }
 
         private void butRutina_Click(object sender, EventArgs e)
@@ -313,23 +319,28 @@ namespace Entrenador
         private void butRecalcular_Click(object sender, EventArgs e)
         {
             int tiempo_promedio = 0;
+
+            int cont = this.dataGridView1.SelectedRows.Count;
+           
             try
             {
                 if (textDisponible.Text != "")
                 {
                     int tiempo = int.Parse(textDisponible.Text);
-                    tiempo_promedio = (tiempo / (dataGridView1.RowCount - 1));
+                    tiempo_promedio = (tiempo / cont);
                 }
                 else
                 {
-                   
+
                 }
 
 
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+
+                foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
                 {
                     if (row.IsNewRow)
-                    { break;
+                    {
+                        break;
 
                     }
                     row.Cells["Tiempo"].Value = tiempo_promedio.ToString();
@@ -348,26 +359,42 @@ namespace Entrenador
         {
             
             try
-            {
-                
-                //fila = 0;
-                fila = dataGridView1.CurrentRow.Index;
-               
+            {              
+                fila = dataGridView1.CurrentRow.Index;               
                 this.c = 0;
-                dataGridView1.Rows[fila].DefaultCellStyle.BackColor = Color.Green;
-                dataGridView1.Rows[fila].DefaultCellStyle.ForeColor = Color.White;
+                try
+                {
+                    string tipo = Convert.ToString(dataGridView1.Rows[fila].Cells["Tipo"].Value);
 
-                notifyIcon1.ShowBalloonTip(1000, "Esto es un mensaje", dataGridView1.Rows[fila].Cells[0].Value.ToString(), ToolTipIcon.Info);
-                pantalla p = new pantalla();
-                p.leyenda = dataGridView1.Rows[fila].Cells[0].Value.ToString();
-                p.audio = Convert.ToString(dataGridView1.Rows[fila].Cells["Audio"].Value);
-                p.imagen = Convert.ToString(dataGridView1.Rows[fila].Cells["Imagen"].Value);
+                    if (tipo == "Programa")
+                    {
+                        procesa_Programa();
+                    }
+                    else
+                    {
+                        procesa_tarea_sencilla();
+                    }
 
-                string t = Convert.ToString(dataGridView1.Rows[fila].Cells["Unidad"].Value);
-                unidadTiempo(t);
+                }
+                catch (Exception)
+                {
+                }
 
-                p.Show();
-                labelTarea.Text = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+
+                //dataGridView1.Rows[fila].DefaultCellStyle.BackColor = Color.Green;
+                //dataGridView1.Rows[fila].DefaultCellStyle.ForeColor = Color.White;
+
+                //notifyIcon1.ShowBalloonTip(1000, "Esto es un mensaje", dataGridView1.Rows[fila].Cells[0].Value.ToString(), ToolTipIcon.Info);
+                //pantalla p = new pantalla();
+                //p.leyenda = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+                //p.audio = Convert.ToString(dataGridView1.Rows[fila].Cells["Audio"].Value);
+                //p.imagen = Convert.ToString(dataGridView1.Rows[fila].Cells["Imagen"].Value);
+
+                //string t = Convert.ToString(dataGridView1.Rows[fila].Cells["Unidad"].Value);
+                //unidadTiempo(t);
+
+                //p.Show();
+                //labelTarea.Text = dataGridView1.Rows[fila].Cells[0].Value.ToString();
             }
             catch (Exception)
             {
@@ -381,12 +408,7 @@ namespace Entrenador
             
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            MessageBox.Show("TAREA T2");
-            timer1.Start();
-            timer2.Stop();
-        }
+       
 
         private void unidadTiempo(string u) {
             switch (u)
@@ -397,9 +419,15 @@ namespace Entrenador
                         timer1.Start();
                     }
                     break;
-                case "Minuto":
+                case "Minutos":
                     {
                         timer1.Interval = 60000;
+                        timer1.Start();
+                    }
+                    break;
+                case "Segundos":
+                    {
+                        timer1.Interval = 1000;
                         timer1.Start();
                     }
                     break;
@@ -416,9 +444,7 @@ namespace Entrenador
             this.c++;
             ShowInTaskbar = true;
             labelCorriendo.Text = this.c.ToString();
-            //notifyIcon1.Visible = true;
-            // notifyIcon1.BalloonTipText = "Mensaje";
-            //notifyIcon1.BalloonTipTitle = "Mensaje";
+            
            
             notifyIcon1.Text = this.c.ToString();
             if (fila < (dataGridView1.Rows.Count - 2))
@@ -429,41 +455,22 @@ namespace Entrenador
 
                     if (tipo == "Programa")
                     {
-                        MessageBox.Show("Es un programa");
-                        timer1.Stop();
-                        timer2.Interval = 3000;// opero el programa con el timee2
-                        timer2.Start();
+                        t = int.Parse(dataGridView1.Rows[fila].Cells[1].Value.ToString());
+                        if (c == t)
+                        {
+                            this.c = 0;
+                            fila++;
+                            procesa_Programa();
+                        }
                     }
                     else
                     {
                         t = int.Parse(dataGridView1.Rows[fila].Cells[1].Value.ToString());
                         if (c == t)
                         {
-                            //axWindowsMediaPlayer1.URL = "sonido.mp3";
-                            //// axWindowsMediaPlayer1.settings.setMode("loop", true);
-                            //axWindowsMediaPlayer1.Ctlcontrols.play();
-                            ////SoundPlayer sound = new SoundPlayer("sonido.mp3");
-                            ////sound.PlaySync();
-                            ///
-
                             this.c = 0;
                             fila++;
-
-
-                            dataGridView1.Rows[fila].DefaultCellStyle.BackColor = Color.Green;
-                            dataGridView1.Rows[fila].DefaultCellStyle.ForeColor = Color.White;
-                            string t = Convert.ToString(dataGridView1.Rows[fila].Cells["Unidad"].Value);
-                            unidadTiempo(t);
-
-                            notifyIcon1.ShowBalloonTip(1000, "Esto es un mensaje", dataGridView1.Rows[fila].Cells[0].Value.ToString(), ToolTipIcon.Info);
-                            labelTarea.Text = dataGridView1.Rows[fila].Cells[0].Value.ToString();
-                            pantalla p = new pantalla();
-                            p.leyenda = dataGridView1.Rows[fila].Cells[0].Value.ToString();
-                            p.audio = Convert.ToString(dataGridView1.Rows[fila].Cells["Audio"].Value);
-                            p.imagen = Convert.ToString(dataGridView1.Rows[fila].Cells["Imagen"].Value);
-
-                            p.Show();
-                           
+                            procesa_tarea_sencilla();
                         }
                     }
 
@@ -480,5 +487,75 @@ namespace Entrenador
             else {  timer1.Stop(); }
             
         }
+
+        #region tareas
+        public void procesa_tarea_sencilla()
+        {
+            //t = int.Parse(dataGridView1.Rows[fila].Cells[1].Value.ToString());
+            //if (c == t)
+            //{
+
+                dataGridView1.Rows[fila].DefaultCellStyle.BackColor = Color.Green;
+                dataGridView1.Rows[fila].DefaultCellStyle.ForeColor = Color.White;
+                string ut = Convert.ToString(dataGridView1.Rows[fila].Cells["Unidad"].Value);
+                unidadTiempo(ut);
+
+                notifyIcon1.ShowBalloonTip(1000, "Esto es un mensaje", dataGridView1.Rows[fila].Cells[0].Value.ToString(), ToolTipIcon.Info);
+                labelTarea.Text = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+                pantalla p = new pantalla();
+                p.leyenda = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+                p.audio = Convert.ToString(dataGridView1.Rows[fila].Cells["Audio"].Value);
+                p.imagen = Convert.ToString(dataGridView1.Rows[fila].Cells["Imagen"].Value);
+
+                p.Show();
+
+            //}
+
+
+        }
+
+        public void procesa_Programa()
+        {
+           
+                dataGridView1.Rows[fila].DefaultCellStyle.BackColor = Color.Green;
+                dataGridView1.Rows[fila].DefaultCellStyle.ForeColor = Color.White;
+                string ut = Convert.ToString(dataGridView1.Rows[fila].Cells["Unidad"].Value);
+                unidadTiempo(ut);
+
+                notifyIcon1.ShowBalloonTip(1000, "Esto es un mensaje", dataGridView1.Rows[fila].Cells[0].Value.ToString(), ToolTipIcon.Info);
+                labelTarea.Text = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+                pantalla p = new pantalla();
+                p.leyenda = dataGridView1.Rows[fila].Cells[0].Value.ToString();
+                p.audio = Convert.ToString(dataGridView1.Rows[fila].Cells["Audio"].Value);
+                p.imagen = Convert.ToString(dataGridView1.Rows[fila].Cells["Imagen"].Value);
+                string programa = Convert.ToString(dataGridView1.Rows[fila].Cells["programa"].Value);
+                correr_programa(programa);
+                p.Show();
+
+           
+
+
+        }
+
+        public void correr_programa(string programa) 
+        {
+            try
+            {
+                axWindowsMediaPlayer1.URL = programa;
+            }
+            catch (Exception)
+            {   programa = "sonido.mp3";               
+                axWindowsMediaPlayer1.URL = programa;
+              
+            }
+            // axWindowsMediaPlayer1.settings.setMode("loop", true);
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+        #endregion
+
     }
+
+
+
+
 }

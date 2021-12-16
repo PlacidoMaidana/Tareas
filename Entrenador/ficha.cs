@@ -80,7 +80,7 @@ namespace Entrenador
 
         private void butPrograma_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "programa (*.csv)|*.csv|All files (*.*)|*.*";
+            openFileDialog1.Filter = "programa (*.mp3)|*.mp3|All files (*.*)|*.*";
             try
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -94,6 +94,11 @@ namespace Entrenador
 
                 MessageBox.Show("Seleccione un programa");
             }
+        }
+
+        private void comboUnidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
