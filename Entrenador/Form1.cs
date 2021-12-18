@@ -168,6 +168,7 @@ namespace Entrenador
                 item.DefaultCellStyle.BackColor = Color.White;
                 item.DefaultCellStyle.ForeColor = Color.Black;
             }
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
 
         private void radioSegundos_CheckedChanged(object sender, EventArgs e)
@@ -186,6 +187,7 @@ namespace Entrenador
         {
             labelCorriendo.Text = "Pausado";
             timer1.Stop();
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
 
         private void butReanudar_Click(object sender, EventArgs e)
