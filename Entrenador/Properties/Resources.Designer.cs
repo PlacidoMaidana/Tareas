@@ -244,6 +244,16 @@ namespace Entrenador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap note_task_comment_message_edit_write_108613 {
+            get {
+                object obj = ResourceManager.GetObject("note-task-comment-message-edit-write_108613", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Orb_Minus {
             get {
                 object obj = ResourceManager.GetObject("Orb-Minus", resourceCulture);

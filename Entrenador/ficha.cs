@@ -49,7 +49,19 @@ namespace Entrenador
             t.tipo =  comboTipo.Text;
             t.unidad = comboUnidades.Text;
             t.programa = textPrograma.Text;
-        }   
+        }
+
+        public void cargar_controles()
+        {
+            textTarea.Text= t.nombre;
+            textTiempo.Text= t.tiempo;
+            textId.Text= t.id;
+            textImagen.Text = t.imagen;
+            textAudio.Text = t.audio;
+            comboTipo.Text = t.tipo;
+            comboUnidades.Text = t.unidad;
+            textPrograma.Text = t.programa;
+        }
 
         private void butNuevo_Click(object sender, EventArgs e)
         {
@@ -99,6 +111,14 @@ namespace Entrenador
         private void comboUnidades_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ficha_Load(object sender, EventArgs e)
+        {
+            if (t!=null)
+            {
+                cargar_controles();
+            }
         }
     }
 }

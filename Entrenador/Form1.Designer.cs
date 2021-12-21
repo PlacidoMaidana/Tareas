@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Imagen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Audio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Programa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.butEPLER = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +58,7 @@
             this.labRutina = new System.Windows.Forms.Label();
             this.textDisponible = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.butRecalcular = new System.Windows.Forms.Button();
             this.butArriba = new System.Windows.Forms.Button();
             this.butBajar = new System.Windows.Forms.Button();
@@ -65,14 +74,6 @@
             this.butQquitar = new System.Windows.Forms.Button();
             this.butCorrer = new System.Windows.Forms.Button();
             this.butNuevo = new System.Windows.Forms.Button();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Imagen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Audio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Programa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +102,66 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(654, 517);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 200;
+            // 
+            // Tiempo
+            // 
+            this.Tiempo.HeaderText = "Tiempo";
+            this.Tiempo.MinimumWidth = 6;
+            this.Tiempo.Name = "Tiempo";
+            this.Tiempo.Width = 60;
+            // 
+            // Ord
+            // 
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Ord.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Ord.HeaderText = "Ord";
+            this.Ord.MinimumWidth = 2;
+            this.Ord.Name = "Ord";
+            this.Ord.Visible = false;
+            this.Ord.Width = 30;
+            // 
+            // Imagen
+            // 
+            this.Imagen.HeaderText = "Imagen";
+            this.Imagen.MinimumWidth = 6;
+            this.Imagen.Name = "Imagen";
+            this.Imagen.Width = 125;
+            // 
+            // Audio
+            // 
+            this.Audio.HeaderText = "Audio";
+            this.Audio.MinimumWidth = 6;
+            this.Audio.Name = "Audio";
+            this.Audio.Width = 125;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.Width = 125;
+            // 
+            // Unidad
+            // 
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.MinimumWidth = 6;
+            this.Unidad.Name = "Unidad";
+            this.Unidad.Width = 125;
+            // 
+            // Programa
+            // 
+            this.Programa.HeaderText = "Programa";
+            this.Programa.MinimumWidth = 6;
+            this.Programa.Name = "Programa";
+            this.Programa.Width = 125;
             // 
             // axWindowsMediaPlayer1
             // 
@@ -264,6 +325,23 @@
             this.label1.Size = new System.Drawing.Size(127, 17);
             this.label1.TabIndex = 33;
             this.label1.Text = "Tiempo disponible:";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::Entrenador.Properties.Resources.note_task_comment_message_edit_write_108613;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(689, 124);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 53);
+            this.button1.TabIndex = 35;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // butRecalcular
             // 
@@ -482,7 +560,7 @@
             this.butNuevo.ForeColor = System.Drawing.Color.Black;
             this.butNuevo.Image = global::Entrenador.Properties.Resources.Orb_Plus;
             this.butNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butNuevo.Location = new System.Drawing.Point(678, 124);
+            this.butNuevo.Location = new System.Drawing.Point(679, 63);
             this.butNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.butNuevo.Name = "butNuevo";
             this.butNuevo.Size = new System.Drawing.Size(77, 53);
@@ -491,72 +569,13 @@
             this.butNuevo.UseVisualStyleBackColor = true;
             this.butNuevo.Click += new System.EventHandler(this.butNuevo_Click);
             // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 200;
-            // 
-            // Tiempo
-            // 
-            this.Tiempo.HeaderText = "Tiempo";
-            this.Tiempo.MinimumWidth = 6;
-            this.Tiempo.Name = "Tiempo";
-            this.Tiempo.Width = 60;
-            // 
-            // Ord
-            // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Ord.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Ord.HeaderText = "Ord";
-            this.Ord.MinimumWidth = 2;
-            this.Ord.Name = "Ord";
-            this.Ord.Visible = false;
-            this.Ord.Width = 30;
-            // 
-            // Imagen
-            // 
-            this.Imagen.HeaderText = "Imagen";
-            this.Imagen.MinimumWidth = 6;
-            this.Imagen.Name = "Imagen";
-            this.Imagen.Width = 125;
-            // 
-            // Audio
-            // 
-            this.Audio.HeaderText = "Audio";
-            this.Audio.MinimumWidth = 6;
-            this.Audio.Name = "Audio";
-            this.Audio.Width = 125;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Width = 125;
-            // 
-            // Unidad
-            // 
-            this.Unidad.HeaderText = "Unidad";
-            this.Unidad.MinimumWidth = 6;
-            this.Unidad.Name = "Unidad";
-            this.Unidad.Width = 125;
-            // 
-            // Programa
-            // 
-            this.Programa.HeaderText = "Programa";
-            this.Programa.MinimumWidth = 6;
-            this.Programa.Name = "Programa";
-            this.Programa.Width = 125;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 681);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.butRecalcular);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textDisponible);
@@ -643,6 +662,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Programa;
+        private System.Windows.Forms.Button button1;
     }
 }
 

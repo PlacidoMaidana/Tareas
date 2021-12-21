@@ -288,6 +288,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ficha";
             this.Text = "ficha";
+            this.Load += new System.EventHandler(this.ficha_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

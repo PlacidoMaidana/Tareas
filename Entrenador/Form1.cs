@@ -14,7 +14,7 @@ namespace Entrenador
 {
     public partial class Form1 : Form
     {
-        Tarea tarea;
+        Tarea tarea,tarea2;
         int c, t = 0,fila=0;
         public Form1()
         {
@@ -516,6 +516,23 @@ namespace Entrenador
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int fila = dataGridView1.CurrentRow.Index;
+            get_fila(fila);
+            ficha f = new ficha();
+            f.t = tarea2;
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                tarea = f.t;
+                Modificar_fila(fila,tarea);
+                
+            }
+
+            dataGridView1.Rows[0].Selected = true;
+
+        }
+
         public void procesa_Programa()
         {
            
@@ -553,6 +570,38 @@ namespace Entrenador
             // axWindowsMediaPlayer1.settings.setMode("loop", true);
             axWindowsMediaPlayer1.Ctlcontrols.play();
         }
+        #endregion
+
+        #region ConLaClaseTareas
+        public void get_fila(int fila)
+        {
+           
+            tarea2 = new Tarea();
+            
+            tarea2.nombre =   Convert.ToString(dataGridView1.Rows[fila].Cells["nombre"].Value);
+            tarea2.tiempo =   Convert.ToString(dataGridView1.Rows[fila].Cells["tiempo"].Value);
+            tarea2.id =       Convert.ToString(dataGridView1.Rows[fila].Cells["Ord"].Value);
+            tarea2.imagen =   Convert.ToString(dataGridView1.Rows[fila].Cells["imagen"].Value);
+            tarea2.audio =    Convert.ToString(dataGridView1.Rows[fila].Cells["audio"].Value);
+            tarea2.tipo =     Convert.ToString(dataGridView1.Rows[fila].Cells["tipo"].Value);
+            tarea2.unidad =   Convert.ToString(dataGridView1.Rows[fila].Cells["unidad"].Value);
+            tarea2.programa = Convert.ToString(dataGridView1.Rows[fila].Cells["programa"].Value);
+        }
+
+        public void Modificar_fila(int fila,Tarea tarea)
+        {
+            dataGridView1.Rows[fila].Cells["nombre"].Value     =tarea.nombre;
+            dataGridView1.Rows[fila].Cells["tiempo"].Value     = tarea.tiempo;
+            dataGridView1.Rows[fila].Cells["Ord"].Value        = tarea.id;
+            dataGridView1.Rows[fila].Cells["imagen"].Value     = tarea.imagen;
+            dataGridView1.Rows[fila].Cells["audio"].Value      = tarea.audio;
+            dataGridView1.Rows[fila].Cells["tipo"].Value       = tarea.tipo;
+            dataGridView1.Rows[fila].Cells["unidad"].Value     = tarea.unidad;
+            dataGridView1.Rows[fila].Cells["programa"].Value   = tarea.programa;
+
+
+        }
+
         #endregion
 
     }
