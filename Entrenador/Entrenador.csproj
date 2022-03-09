@@ -150,6 +150,7 @@
     <None Include="Resources\1486505375-files-folder-search-magnifying-glass-file-search-magnifier-storage_81440.png" />
     <None Include="Resources\iconfinder-check-4341282_120572.png" />
     <None Include="Resources\note-task-comment-message-edit-write_108613.png" />
+    <None Include="Resources\Application-Side-Expand.png" />
     <Content Include="stopwatch.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -130,8 +130,8 @@
   <data name="Blueprint2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blueprint2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow_up_bold_box_outline_icon_139943" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow_up_bold_box_outline_icon_139943.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Calculator-Operations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Calculator-Operations.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shleves" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shleves.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,23 +148,26 @@
   <data name="Player-Pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Player-Pause.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="arrow_up_bold_box_outline_icon_139943" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_up_bold_box_outline_icon_139943.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1486348822-music-play-pause-control-go-arrow-blue_80476" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1486348822-music-play-pause-control-go-arrow-blue_80476.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Orb-Minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Orb-Minus.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="note-task-comment-message-edit-write_108613" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\note-task-comment-message-edit-write_108613.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1486348818-forward-arrows-arrow-front-go-blue_80478" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1486348818-forward-arrows-arrow-front-go-blue_80478.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Calculator-Operations" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Calculator-Operations.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder-check-4341282_120572" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder-check-4341282_120572.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit_add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1486348820-music-pause-stop-control-play-blue_80477" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1486348820-music-pause-stop-control-play-blue_80477.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +202,7 @@
   <data name="Orb-Plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Orb-Plus.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="note-task-comment-message-edit-write_108613" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\note-task-comment-message-edit-write_108613.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Application-Side-Expand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Application-Side-Expand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

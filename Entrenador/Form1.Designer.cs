@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -58,6 +59,7 @@
             this.labRutina = new System.Windows.Forms.Label();
             this.textDisponible = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.butRecalcular = new System.Windows.Forms.Button();
             this.butArriba = new System.Windows.Forms.Button();
@@ -74,6 +76,9 @@
             this.butQquitar = new System.Windows.Forms.Button();
             this.butCorrer = new System.Windows.Forms.Button();
             this.butNuevo = new System.Windows.Forms.Button();
+            this.labelMinutos = new System.Windows.Forms.Label();
+            this.buttonGuardarSeleccion = new System.Windows.Forms.Button();
+            this.buttonInsertar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +110,8 @@
             // 
             // Nombre
             // 
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre.DefaultCellStyle = dataGridViewCellStyle7;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
@@ -119,9 +126,9 @@
             // 
             // Ord
             // 
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Ord.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Ord.DefaultCellStyle = dataGridViewCellStyle8;
             this.Ord.HeaderText = "Ord";
             this.Ord.MinimumWidth = 2;
             this.Ord.Name = "Ord";
@@ -246,7 +253,7 @@
             // 
             this.labelCorriendo.AutoSize = true;
             this.labelCorriendo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorriendo.Location = new System.Drawing.Point(695, 523);
+            this.labelCorriendo.Location = new System.Drawing.Point(695, 527);
             this.labelCorriendo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCorriendo.Name = "labelCorriendo";
             this.labelCorriendo.Size = new System.Drawing.Size(76, 25);
@@ -326,6 +333,19 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Tiempo disponible:";
             // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::Entrenador.Properties.Resources.Application_Side_Expand;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button2.Location = new System.Drawing.Point(691, 175);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(77, 53);
+            this.button2.TabIndex = 36;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -333,7 +353,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Entrenador.Properties.Resources.note_task_comment_message_edit_write_108613;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button1.Location = new System.Drawing.Point(689, 124);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
@@ -365,7 +385,7 @@
             this.butArriba.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butArriba.Image = global::Entrenador.Properties.Resources.arrow_up_bold_box_outline_icon_139943;
             this.butArriba.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butArriba.Location = new System.Drawing.Point(689, 311);
+            this.butArriba.Location = new System.Drawing.Point(689, 355);
             this.butArriba.Margin = new System.Windows.Forms.Padding(4);
             this.butArriba.Name = "butArriba";
             this.butArriba.Size = new System.Drawing.Size(67, 41);
@@ -380,7 +400,7 @@
             this.butBajar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butBajar.Image = global::Entrenador.Properties.Resources.arrow_down_bold_box_outline_icon_139963;
             this.butBajar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butBajar.Location = new System.Drawing.Point(689, 343);
+            this.butBajar.Location = new System.Drawing.Point(689, 387);
             this.butBajar.Margin = new System.Windows.Forms.Padding(4);
             this.butBajar.Name = "butBajar";
             this.butBajar.Size = new System.Drawing.Size(67, 41);
@@ -393,10 +413,10 @@
             // 
             this.butLimpiar.Image = global::Entrenador.Properties.Resources.Brushes;
             this.butLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butLimpiar.Location = new System.Drawing.Point(335, 49);
+            this.butLimpiar.Location = new System.Drawing.Point(377, 50);
             this.butLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.butLimpiar.Name = "butLimpiar";
-            this.butLimpiar.Size = new System.Drawing.Size(155, 66);
+            this.butLimpiar.Size = new System.Drawing.Size(106, 65);
             this.butLimpiar.TabIndex = 26;
             this.butLimpiar.Text = "Limpiar";
             this.butLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -407,12 +427,12 @@
             // 
             this.butLeer.Image = global::Entrenador.Properties.Resources.Binoculars;
             this.butLeer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butLeer.Location = new System.Drawing.Point(20, 49);
+            this.butLeer.Location = new System.Drawing.Point(20, 50);
             this.butLeer.Margin = new System.Windows.Forms.Padding(4);
             this.butLeer.Name = "butLeer";
-            this.butLeer.Size = new System.Drawing.Size(155, 66);
+            this.butLeer.Size = new System.Drawing.Size(106, 65);
             this.butLeer.TabIndex = 24;
-            this.butLeer.Text = "Buscar";
+            this.butLeer.Text = "Cargar";
             this.butLeer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butLeer.UseVisualStyleBackColor = true;
             this.butLeer.Click += new System.EventHandler(this.butLeer_Click);
@@ -438,7 +458,7 @@
             this.butDuplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butDuplicar.Image = global::Entrenador.Properties.Resources.Blueprint2;
             this.butDuplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butDuplicar.Location = new System.Drawing.Point(678, 244);
+            this.butDuplicar.Location = new System.Drawing.Point(678, 288);
             this.butDuplicar.Margin = new System.Windows.Forms.Padding(4);
             this.butDuplicar.Name = "butDuplicar";
             this.butDuplicar.Size = new System.Drawing.Size(77, 53);
@@ -511,10 +531,10 @@
             // 
             this.butGrabar.Image = global::Entrenador.Properties.Resources.Shleves;
             this.butGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butGrabar.Location = new System.Drawing.Point(177, 49);
+            this.butGrabar.Location = new System.Drawing.Point(258, 50);
             this.butGrabar.Margin = new System.Windows.Forms.Padding(4);
             this.butGrabar.Name = "butGrabar";
-            this.butGrabar.Size = new System.Drawing.Size(155, 66);
+            this.butGrabar.Size = new System.Drawing.Size(106, 65);
             this.butGrabar.TabIndex = 7;
             this.butGrabar.Text = "Guardar";
             this.butGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -528,7 +548,7 @@
             this.butQquitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butQquitar.Image = global::Entrenador.Properties.Resources.Orb_Minus;
             this.butQquitar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butQquitar.Location = new System.Drawing.Point(678, 185);
+            this.butQquitar.Location = new System.Drawing.Point(678, 229);
             this.butQquitar.Margin = new System.Windows.Forms.Padding(4);
             this.butQquitar.Name = "butQquitar";
             this.butQquitar.Size = new System.Drawing.Size(77, 53);
@@ -569,12 +589,54 @@
             this.butNuevo.UseVisualStyleBackColor = true;
             this.butNuevo.Click += new System.EventHandler(this.butNuevo_Click);
             // 
+            // labelMinutos
+            // 
+            this.labelMinutos.AutoSize = true;
+            this.labelMinutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMinutos.Location = new System.Drawing.Point(895, 527);
+            this.labelMinutos.Name = "labelMinutos";
+            this.labelMinutos.Size = new System.Drawing.Size(68, 25);
+            this.labelMinutos.TabIndex = 37;
+            this.labelMinutos.Text = "*******";
+            // 
+            // buttonGuardarSeleccion
+            // 
+            this.buttonGuardarSeleccion.Image = global::Entrenador.Properties.Resources.Shleves;
+            this.buttonGuardarSeleccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGuardarSeleccion.Location = new System.Drawing.Point(496, 50);
+            this.buttonGuardarSeleccion.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonGuardarSeleccion.Name = "buttonGuardarSeleccion";
+            this.buttonGuardarSeleccion.Size = new System.Drawing.Size(151, 65);
+            this.buttonGuardarSeleccion.TabIndex = 38;
+            this.buttonGuardarSeleccion.Text = "Guardar seleccionado";
+            this.buttonGuardarSeleccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonGuardarSeleccion.UseVisualStyleBackColor = true;
+            this.buttonGuardarSeleccion.Click += new System.EventHandler(this.buttonGuardarSeleccion_Click);
+            // 
+            // buttonInsertar
+            // 
+            this.buttonInsertar.Image = global::Entrenador.Properties.Resources.Binoculars;
+            this.buttonInsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonInsertar.Location = new System.Drawing.Point(139, 50);
+            this.buttonInsertar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonInsertar.Name = "buttonInsertar";
+            this.buttonInsertar.Size = new System.Drawing.Size(106, 65);
+            this.buttonInsertar.TabIndex = 39;
+            this.buttonInsertar.Text = "Insertar";
+            this.buttonInsertar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonInsertar.UseVisualStyleBackColor = true;
+            this.buttonInsertar.Click += new System.EventHandler(this.buttonInsertar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 681);
+            this.Controls.Add(this.buttonInsertar);
+            this.Controls.Add(this.buttonGuardarSeleccion);
+            this.Controls.Add(this.labelMinutos);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.butRecalcular);
             this.Controls.Add(this.label1);
@@ -654,6 +716,7 @@
         private System.Windows.Forms.TextBox textDisponible;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button butRecalcular;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tiempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ord;
@@ -662,7 +725,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Programa;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label labelMinutos;
+        private System.Windows.Forms.Button buttonGuardarSeleccion;
+        private System.Windows.Forms.Button buttonInsertar;
     }
 }
 

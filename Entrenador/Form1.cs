@@ -16,6 +16,9 @@ namespace Entrenador
     {
         Tarea tarea,tarea2;
         int c, t = 0,fila=0;
+        decimal minutos=0;
+        List<Tarea> lista_tareas = new List<Tarea>();
+        bool fila_existe = false;
         public Form1()
         {
             InitializeComponent();
@@ -444,10 +447,14 @@ namespace Entrenador
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.c++;
+            this.minutos = ((decimal)this.c/60);
+            
+            
             ShowInTaskbar = true;
             labelCorriendo.Text = this.c.ToString();
-            
-           
+            labelMinutos.Text = string.Format("{0,5:N3}  minutos", (decimal)this.minutos);
+
+
             notifyIcon1.Text = this.c.ToString();
             if (fila < (dataGridView1.Rows.Count - 2))
             {
@@ -554,6 +561,177 @@ namespace Entrenador
            
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {//Blanquea la fila 
+
+
+            foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
+            {
+                if (row.IsNewRow)
+                {
+                    break;
+
+                }
+                if (dataGridView1.Rows[fila].DefaultCellStyle.BackColor == Color.White)
+                {
+                    row.DefaultCellStyle.BackColor = Color.Green;
+                    row.DefaultCellStyle.ForeColor = Color.White;
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+
+                }
+               // row.Cells["Tiempo"].Value = tiempo_promedio.ToString();
+
+            }
+
+
+
+
+           // fila = dataGridView1.CurrentRow.Index;
+           
+
+
+
+
+        }
+
+        public void  resguardar_lista()
+        {
+            int cont = this.dataGridView1.Rows.Count;
+           
+            try
+            {
+                for (int fila = 0; fila < cont; fila++)
+                {
+                    if (dataGridView1.Rows[fila].IsNewRow)
+                    {
+                        break;
+
+                    }
+                    get_fila(fila);
+                    lista_tareas.Add(tarea2);                    
+                   
+                }
+
+            
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Problemas al cargar el programa");
+            }
+
+          
+        }
+        public void mostrar_lista_tareas()
+        {
+            string text = "";
+            foreach (var item in lista_tareas)
+            {
+                text += item.nombre + "  ";
+            }
+            MessageBox.Show(text);
+        }
+
+        public void mostrar_lista_tareas2()
+        {
+            string text = "";
+            for (int i = 0; i < lista_tareas.Count(); i++)
+            {
+                text += lista_tareas[i].nombre + "  ";
+            }
+            
+            MessageBox.Show(text);
+        }
+
+        public void cargo_primer_parte()
+        {
+            fila = dataGridView1.CurrentRow.Index;
+            bool fila_existe = dataGridView1.Rows[fila].IsNewRow ? false : true;
+            dataGridView1.Rows.Clear();
+
+            for (int i = 0; i < lista_tareas.Count(); i++)
+            {
+                if (i==fila+1 && fila_existe)
+                {
+                    break;
+                }
+                dataGridView1.Rows.Add(lista_tareas[i].nombre,
+                                       lista_tareas[i].tiempo,
+                                       lista_tareas[i].id,
+                                       lista_tareas[i].imagen,
+                                       lista_tareas[i].audio,
+                                       lista_tareas[i].tipo,
+                                       lista_tareas[i].unidad,
+                                       lista_tareas[i].programa);
+
+            }
+
+
+
+
+        }
+
+        public void cargo_nuevo_programa()
+        {
+            openFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string FileToRead = openFileDialog1.FileName;
+                labRutina.Text = (System.IO.Path.GetFileNameWithoutExtension(openFileDialog1.FileName));
+
+
+                using (StreamReader ReaderObject = new StreamReader(FileToRead))
+                {
+                    //dataGridView1.Rows.Clear();
+                    string Line;
+                    // ReaderObject reads a single line, stores it in Line string variable and then displays it on console
+                    while ((Line = ReaderObject.ReadLine()) != null)
+                    {
+                        string[] T = Line.Split(',');
+                        dataGridView1.Rows.Add(T[0], T[1], T[2], T[3], T[4], T[5], T[6], T[7]);
+                    }
+                    dataGridView1.Rows[0].Selected = true;
+                }
+
+            }
+
+        }
+
+        public void cargo_segunda_parte()
+        {
+            for (int i = fila + 1; i < lista_tareas.Count(); i++)
+            {                
+                dataGridView1.Rows.Add(lista_tareas[i].nombre,
+                                       lista_tareas[i].tiempo,
+                                       lista_tareas[i].id,
+                                       lista_tareas[i].imagen,
+                                       lista_tareas[i].audio,
+                                       lista_tareas[i].tipo,
+                                       lista_tareas[i].unidad,
+                                       lista_tareas[i].programa);
+
+            }
+        }
+
+
+        private void buttonInsertar_Click(object sender, EventArgs e)
+        {
+            int cont = this.dataGridView1.Rows.Count;
+            resguardar_lista();
+            cargo_primer_parte();
+            cargo_nuevo_programa();
+            cargo_segunda_parte();
+        }
+
+        private void buttonGuardarSeleccion_Click(object sender, EventArgs e)
+        {
+            //todo
         }
 
         public void correr_programa(string programa) 
